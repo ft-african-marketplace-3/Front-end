@@ -1,19 +1,23 @@
 import React from "react";
 import { NavLink } from 'react-router-dom';
+import logo from "./Assets/fm.jpg"
+import smallLogo from "./Assets/smallfm.png"
 
 import styled from "styled-components"
+
 
 
 export default function NavBar() {
     return (
       <StyledNav>
               <NavLink to="/" className={"left"}>
+                <img src={logo} alt={"Field market logo"} className={"logoBig"}/>
+                <img src={smallLogo} alt={"Field market logo"} className={"logoSmall"}/>
               </NavLink>
-              <div className={"right"}>
-              <NavLink to="/about">About Us</NavLink>  
-              <NavLink to="/login">Login</NavLink>
-              <NavLink to="/signup">Sign Up</NavLink>
-              <NavLink to="/contact">Contact Us</NavLink>
+              <div className={"right"}>   
+              <NavLink to="/about">ABOUT</NavLink>  
+              <NavLink to="/contact">CONTACT</NavLink>
+              <NavLink to="/login">LOGIN</NavLink>
               </div>
       </StyledNav>
     );
@@ -30,11 +34,31 @@ export default function NavBar() {
   background-color: white ;
   box-shadow: 0 5px 10px 5px rgba(50, 50, 50, 1);
   .left{
+    display: flex;
+    justify-content: center;
+    align-items: center;
   width: 16%;
   height: 7vh;
-  background-image: url("/images/fm.jpg");
-  background-size: cover;
-  margin-bottom: 1%;
+  img{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 5vh;
+  }
+  .logoSmall{
+   display: none;
+}
+
+@media only screen and (max-width: 1000px){ //some value
+   .logoBig{
+     display: none;
+   }
+
+   .logoSmall{
+     display: block;
+   }
+}
   }
   .right{
       display: flex;
@@ -52,7 +76,7 @@ export default function NavBar() {
         background: rgba(245, 245, 245, 0.6);
     }
     a:hover{
-      transform: scale(1.05);
+      transform: scale(1.01);
       box-shadow: 0 0 10px 1px rgba(220, 220, 220, 1);
     }
   }

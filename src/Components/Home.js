@@ -78,11 +78,53 @@ export default function Home() {
   return (
     <>
     <StyledHome>
-      <a href="/login">LOGIN</a>
+      <a href="/login">MISSION</a>
       <Scene className={"image"}/>
       <div className={"info"}>
             <h2>Our Services & Products</h2>
-            <div>
+            <div className={"grid"}>
+              <div className={"grid-container"}>
+                <div class="grid-item">
+                  <h2>
+                  TECHNOLOGY SOLUTIONS
+                  </h2>
+                  <h4>
+                  We develop technologies to measurably improve women’s access to information, business opportunities, and markets.
+                  </h4>
+                </div>
+                <div className={"grid-item"}>
+                  <h2>
+                  RESEARCH & EVIDENCE
+                  </h2>
+                  <h4>
+                  We collect and analyse vital data to understand barriers to women’s economic empowerment.
+                  </h4>
+                </div>
+                <div className={"grid-item"}>
+                  <h2>
+                 FIELD <br/> COLLECT
+                  </h2>
+                  <h4>
+                  Design, test, and deploy survey and monitoring tools remotely using our end-to-end mobile data collection solutions.
+                  </h4>
+                </div>
+                <div className={"grid-item"}>
+                  <h2>
+                  FIELD MARKET INSIGHTS
+                  </h2>
+                  <h4>
+                  Analyse, segment, and extract actionable insights on East African cross-border trade using our interactive data dashboard.
+                  </h4>
+                </div>
+                <div className={"grid-item"}>
+                  <h2>
+                  TRADE & MARKET INFORMATION
+                  </h2>
+                  <h4>
+                  Our mobile information service delivers real-time market prices, exchange rates, information updates, and trade procedures to traders across East Africa.
+                  </h4>
+                </div>
+              </div>
             </div>
       </div>
     </StyledHome>
@@ -112,8 +154,14 @@ letter-spacing: 0.04em;
 white-space: nowrap;
 border: 2px solid rgb(29, 26, 26);
 text-decoration: none;
-background: rgba(245, 245, 245, 0.6);
+background: rgba(245, 245, 245, 0.8);
 padding: 0 1%;
+transition: ease 2s;
+}
+a:hover{
+  filter: brightness(150%);
+  transform: matrix(1, 1, 0, 0, -50%, -50%);
+  transition: ease .5s;
 }
 .info{
     width: 100%;
@@ -124,9 +172,34 @@ padding: 0 1%;
     text-align:center;
     background:white;
     h2{
+      font-family: 'Alegreya Sans SC', sans-serif;
         margin-top: 1%;
         font-size: 3rem;
         border-bottom: 5px solid salmon;
     }
+}
+.grid{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background: chocolate;
+}
+.grid-container {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: auto auto auto;
+  background-color: transparent;
+  padding: 3%;
+}
+
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  text-align: center;
+}
+.grid-item:hover {
+  background-color: rgba(255, 255, 255, 0.9);
 }
 `
