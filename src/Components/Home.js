@@ -78,7 +78,7 @@ export default function Home() {
   return (
     <>
     <StyledHome>
-      <a href="https://www.youtube.com/watch?v=kxXaIHi1j4w">LOGIN</a>
+      <a href="/login">LOGIN</a>
       <Scene className={"image"}/>
       <div className={"info"}>
             <h2>Our Services & Products</h2>

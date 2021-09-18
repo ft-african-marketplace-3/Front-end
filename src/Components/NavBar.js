@@ -13,6 +13,7 @@ export default function NavBar() {
               <NavLink to="/about">About Us</NavLink>  
               <NavLink to="/login">Login</NavLink>
               <NavLink to="/signup">Sign Up</NavLink>
+              <NavLink to="/contact">Contact Us</NavLink>
               </div>
       </StyledNav>
     );
@@ -49,6 +50,10 @@ export default function NavBar() {
         margin: 0 20px;
         padding: 5px 10px;
         background: rgba(245, 245, 245, 0.6);
+    }
+    a:hover{
+      transform: scale(1.05);
+      box-shadow: 0 0 10px 1px rgba(220, 220, 220, 1);
     }
   }
 `
