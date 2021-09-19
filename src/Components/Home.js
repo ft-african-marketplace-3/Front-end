@@ -185,7 +185,7 @@ a:hover{
   align-items: center;
   width: 100%;
   height: 100vh;
-  background: linear-gradient(-45deg, gold, chocolate, brown , darkred);
+  background: linear-gradient(155deg, gold, chocolate, brown , darkred);
   background-size: 400% 400%;
 	animation: gradient 12s ease infinite;
   @keyframes gradient {
