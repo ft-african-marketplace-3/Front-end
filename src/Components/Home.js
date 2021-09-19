@@ -83,6 +83,7 @@ export default function Home() {
       <div className={"info"}>
             <h2>Our Services & Products</h2>
             <div className={"grid"}>
+            <h3> Field Market combines innovative technologies with proven deep expertise to empower women as forces of change in markets, communities, and households.</h3>
               <div className={"grid-container"}>
                 <div class="grid-item">
                   <h2>
@@ -156,12 +157,12 @@ border: 2px solid rgb(29, 26, 26);
 text-decoration: none;
 background: rgba(245, 245, 245, 0.8);
 padding: 0 1%;
-transition: ease 2s;
+transition: ease .5s;
 }
 a:hover{
   filter: brightness(150%);
-  transform: matrix(1, 1, 0, 0, -50%, -50%);
-  transition: ease .5s;
+  transform: translate(-50%,-50%) scale(1.05);
+  transition: ease .2s;
 }
 .info{
     width: 100%;
@@ -177,14 +178,31 @@ a:hover{
         font-size: 3rem;
         border-bottom: 5px solid salmon;
     }
-}
+  }
 .grid{
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
   height: 100vh;
-  background: chocolate;
+  background: linear-gradient(155deg, gold, chocolate, brown , darkred);
+  background-size: 400% 400%;
+	animation: gradient 12s ease infinite;
+  @keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+  }}
+  h3{
+    font-size: 2rem;
+    color: rgba(235, 235, 235, 1);
+    padding: 0 5%;
+  }
 }
 .grid-container {
   display: grid;
@@ -200,6 +218,6 @@ a:hover{
   text-align: center;
 }
 .grid-item:hover {
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.95);
 }
 `
