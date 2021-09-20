@@ -172,6 +172,13 @@ a:hover{
   height: 80vh;
   width: 100%;
 }
+@media only screen and (max-width: 1000px){ //some value
+   .animation{
+     width: 75%;
+   }
+
+}
+  }
 .info{
     width: 100%;
     height: auto;
@@ -189,6 +196,7 @@ a:hover{
   }
 .serviceContainer{
   height: 14vh;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
