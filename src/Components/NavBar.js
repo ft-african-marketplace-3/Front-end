@@ -68,17 +68,13 @@ export default function NavBar() {
       height: 7vh;
     a{
         text-decoration: none;
+        font-weight: bolder;
         color: black;
-        /* border: 1px solid gray;
-        border-radius: 1rem; */
         margin: 0 20px;
         padding: 5px 10px;
-        /* background: rgba(245, 245, 245, 0.6); */
     }
     a:hover{
-      transform: scale(1.01);
       color: chocolate;
-      /* box-shadow: 0 0 10px 1px rgba(220, 220, 220, 1); */
     }
   }
 `

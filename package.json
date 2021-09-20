@@ -11,6 +11,7 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+    "axios": "^0.21.4",
     "babel-plugin-glsl": "^1.0.0",
     "glsl-noise": "^0.0.0",
     "glslify": "^7.1.1",
@@ -20,7 +21,8 @@
     "react-scripts": "4.0.3",
     "styled-components": "^5.3.1",
     "three": "^0.132.2",
-    "web-vitals": "^1.1.2"
+    "web-vitals": "^1.1.2",
+    "yup": "^0.32.9"
   },
   "scripts": {
     "start": "react-scripts start",

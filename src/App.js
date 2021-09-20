@@ -10,6 +10,9 @@ export default function App() {
     <StyledApp>
       <NavBar/>
       <Switch>
+        <Route path={"/about"} component={}/>
+        <Route path={"/signup"} component={}/>
+        <Route path={"/login"} component={}/>
         <Route path={"/"} component={Home}/>
       </Switch>
     </StyledApp>
