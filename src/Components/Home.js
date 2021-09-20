@@ -78,10 +78,14 @@ export default function Home() {
   return (
     <>
     <StyledHome>
-      <a href="/login">MISSION</a>
-      <Scene className={"image"}/>
+      <div className={"animation"}>
+        <a href="/login">MISSION</a>
+        <Scene className={"image"}/>
+      </div>
       <div className={"info"}>
+            <div className={'serviceContainer'}>
             <h2>Our Services & Products</h2>
+            </div>
             <div className={"grid"}>
             <h3> Field Market combines innovative technologies with proven deep expertise to empower women as forces of change in markets, communities, and households.</h3>
               <div className={"grid-container"}>
@@ -135,7 +139,7 @@ export default function Home() {
 
 const StyledHome = styled.div`
 width:100%;
-height:193vh;
+height:auto;
 display: flex;
 flex-direction: column;
 align-items: center;
@@ -164,9 +168,13 @@ a:hover{
   transform: translate(-50%,-50%) scale(1.05);
   transition: ease .2s;
 }
+.animation{
+  height: 80vh;
+  
+}
 .info{
     width: 100%;
-    height: 280vh;
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -174,17 +182,23 @@ a:hover{
     background:white;
     h2{
       font-family: 'Alegreya Sans SC', sans-serif;
-        margin-top: 1%;
+        margin-top:0%;
         font-size: 3rem;
         border-bottom: 5px solid salmon;
     }
   }
+.serviceContainer{
+  height: 14vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .grid{
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
-  height: 100vh;
+  height: auto;
   background: linear-gradient(155deg, gold, chocolate, brown , darkred);
   background-size: 400% 400%;
 	animation: gradient 12s ease infinite;
@@ -206,8 +220,9 @@ a:hover{
 }
 .grid-container {
   display: grid;
+  height: auto;
   grid-gap: 10px;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   background-color: transparent;
   padding: 3%;
 }
@@ -216,6 +231,9 @@ a:hover{
   background-color: rgba(255, 255, 255, 0.8);
   padding: 20px;
   text-align: center;
+  h2{
+    font-size: 2rem;
+  }
 }
 .grid-item:hover {
   background-color: rgba(255, 255, 255, 0.95);
