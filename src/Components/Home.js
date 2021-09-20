@@ -170,7 +170,7 @@ a:hover{
 }
 .animation{
   height: 80vh;
-  
+  width: 100%;
 }
 .info{
     width: 100%;

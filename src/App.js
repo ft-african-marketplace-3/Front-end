@@ -4,15 +4,18 @@ import { Route, Switch } from 'react-router-dom';
 
 import NavBar from "./Components/NavBar";
 import Home from "./Components/Home";
+// import SignUp from "./Components/SignUp"
+// import Login from "./Components/Login"
+// import About from "./Components/About"
 
 export default function App() {
   return (
     <StyledApp>
       <NavBar/>
       <Switch>
-        <Route path={"/about"} component={}/>
+        {/* <Route path={"/about"} component={}/>
         <Route path={"/signup"} component={}/>
-        <Route path={"/login"} component={}/>
+        <Route path={"/login"} component={}/> */}
         <Route path={"/"} component={Home}/>
       </Switch>
     </StyledApp>
