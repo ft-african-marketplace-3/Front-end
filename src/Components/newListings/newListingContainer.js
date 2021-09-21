@@ -30,9 +30,9 @@ export default function NewListing(props) {
 
   const postNewListing = newItemListing => {
     axios
-      .post('https://reqres.in/api/orders', newItemListing)
+      .post('', newItemListing)
       .then((res) => {
-        setOrder([...order, res.data,])
+        setListing([...listing, res.data,])
         setFormValues(initialFormValues);
         console.log('Here is postNewOrder', postNewListing)
       }).catch(err => {
