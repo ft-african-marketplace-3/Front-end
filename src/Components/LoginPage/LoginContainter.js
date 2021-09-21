@@ -22,11 +22,16 @@ export default function NewLogIn() {
   const [formErrors, setFormErrors] = useState(initialFormErrors)
   const [disabled, setDisabled] = useState(initialDisabled)
 
+  const updateForm = (inputName, inputValue) => {
+    setFormValues({ ...formValues, [inputName]: inputValue});
+  }
+
+
   const postNewLogIn = newUserLoggingIn => {
     axios
-      .post('', newUserLogIn)
+      .post('', newUserLoggingIn)
       .then((res) => {
-        setOrder([...order, res.data,])
+        setLogIn([...logIn, res.data,])
         setFormValues(initialFormValues);
         console.log('Here is postNewlogin', postNewLogIn)
       }).catch(err => {
@@ -72,8 +77,9 @@ export default function NewLogIn() {
 
   return(
       <div className='log-in-div'>
-          <LogInForm className='logIn-form'
+          <LogInForm className='form-container'
             values={formValues}
+            update={updateForm}
             change={inputChange}
             submit={formSubmit}
             disabled={disabled}
