@@ -16,7 +16,7 @@ const initialFormErrors = {
 const initialLogIn = []
 const initialDisabled = true
 
-export default function newLogIn() {
+export default function NewLogIn() {
   const [logIn, setLogIn] = useState(initialLogIn)
   const [formValues, setFormValues] = useState(initialFormValues)
   const [formErrors, setFormErrors] = useState(initialFormErrors)

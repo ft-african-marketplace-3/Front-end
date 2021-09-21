@@ -5,7 +5,7 @@ import { Route, Switch } from 'react-router-dom';
 import NavBar from "./Components/NavBar";
 import Home from "./Components/Home";
 // import SignUp from "./Components/SignUp"
-import Login from "./Components/LoginPage/Login"
+// import Login from "./Components/LoginPage/Login"
 // import About from "./Components/About"
 
 export default function App() {
@@ -15,7 +15,7 @@ export default function App() {
       <Switch>
         {/* <Route path={"/about"} component={}/>
         <Route path={"/signup"} component={}/>*/}
-        <Route path={"/login"} component={Login}/> 
+        {/* <Route path={"/login"} component={Login}/>  */}
         <Route path={"/"} component={Home}/>
       </Switch>
     </StyledApp>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import form from './newListingForm';
+import NewListingForm from "./newListingForm";
 import schema from '../validations/listingSchema';
 import axios from 'axios';
 import * as yup from 'yup';
@@ -22,7 +22,7 @@ const initialFormErrors = {
 const initialListing = []
 const initialDisabled = true
 
-export default function newListing(props) {
+export default function NewListing(props) {
   const [listing, setListing] = useState(initialListing)
   const [formValues, setFormValues] = useState(initialFormValues)
   const [formErrors, setFormErrors] = useState(initialFormErrors)
@@ -81,7 +81,7 @@ export default function newListing(props) {
 
   return(
       <div className='listing-div'>
-          <newListingForm className='listing-form'
+          <NewListingForm className='listing-form'
             values={formValues}
             change={inputChange}
             submit={formSubmit}

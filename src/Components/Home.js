@@ -89,14 +89,6 @@ export default function Home() {
             <div className={"grid"}>
             <h3> Field Market combines innovative technologies with proven deep expertise to empower women as forces of change in markets, communities, and households.</h3>
               <div className={"grid-container"}>
-                <div class="grid-item">
-                  <h2>
-                  TECHNOLOGY SOLUTIONS
-                  </h2>
-                  <h4>
-                  We develop technologies to measurably improve women’s access to information, business opportunities, and markets.
-                  </h4>
-                </div>
                 <div className={"grid-item"}>
                   <h2>
                   RESEARCH & EVIDENCE
@@ -107,7 +99,7 @@ export default function Home() {
                 </div>
                 <div className={"grid-item"}>
                   <h2>
-                 FIELD <br/> COLLECT
+                 FIELD COLLECT
                   </h2>
                   <h4>
                   Design, test, and deploy survey and monitoring tools remotely using our end-to-end mobile data collection solutions.
@@ -129,6 +121,14 @@ export default function Home() {
                   Our mobile information service delivers real-time market prices, exchange rates, information updates, and trade procedures to traders across East Africa.
                   </h4>
                 </div>
+                <div class="grid-item">
+                  <h2>
+                  TECHNOLOGY SOLUTIONS
+                  </h2>
+                  <h4>
+                  We develop technologies to measurably improve women’s access to information, business opportunities, and markets.
+                  </h4>
+                </div>
               </div>
             </div>
       </div>
@@ -145,7 +145,7 @@ flex-direction: column;
 align-items: center;
 
 a{
-color: rgb(29, 26, 26);
+color: rgba(29, 26, 26, 1);
 margin: 2%;
 font-size: 2rem;
 font-family: 'Roboto Condensed', sans-serif;
@@ -157,7 +157,7 @@ z-index: 1;
 font-weight: 900;
 letter-spacing: 0.04em;
 white-space: nowrap;
-border: 2px solid rgb(29, 26, 26);
+/* border: 2px solid rgb(29, 26, 26); */
 text-decoration: none;
 background: rgba(245, 245, 245, 0.8);
 padding: 0 1%;
@@ -165,6 +165,7 @@ transition: ease .5s;
 }
 a:hover{
   filter: brightness(150%);
+  background: rgba(245, 245, 245, 1);
   transform: translate(-50%,-50%) scale(1.05);
   transition: ease .2s;
 }
@@ -176,9 +177,12 @@ a:hover{
    .animation{
      width: 75%;
    }
+   .serviceContainer{
+     height: 20vh;
+   }
 
 }
-  }
+  
 .info{
     width: 100%;
     height: auto;
@@ -191,7 +195,12 @@ a:hover{
       font-family: 'Alegreya Sans SC', sans-serif;
         margin-top:0%;
         font-size: 3rem;
-        border-bottom: 5px solid salmon;
+        border-bottom: 5px solid #008b57;
+        @media only screen and (max-width: 500px){ //some value
+          margin-top: 5%;
+          font-size: 2rem;
+
+}
     }
   }
 .serviceContainer{
@@ -200,6 +209,10 @@ a:hover{
   display: flex;
   justify-content: center;
   align-items: center;
+  /* @media only screen and (max-width: 1000px){ //some value
+   height: 20vh;
+
+} */
 }
 .grid{
   display: flex;
@@ -230,10 +243,15 @@ a:hover{
   display: grid;
   height: auto;
   grid-gap: 10px;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 2fr));
   background-color: transparent;
   padding: 3%;
+  margin-bottom: 5%;
+  @media only screen and (max-width: 500px){ //some value
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
 }
+    }
+
 
 .grid-item {
   background-color: rgba(255, 255, 255, 0.8);
@@ -241,6 +259,9 @@ a:hover{
   text-align: center;
   h2{
     font-size: 2rem;
+  }
+  h4{
+    font-size: 1rem;
   }
 }
 .grid-item:hover {
