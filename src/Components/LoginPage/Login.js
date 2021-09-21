@@ -39,7 +39,7 @@ export default function LoginForm(props) {
                         value= {values.password}
                         /*onChange={onChange}*/
                         name='password'
-                        type='text'
+                        type='password'
                     />
                 </label>
                 </div>

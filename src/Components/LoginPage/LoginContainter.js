@@ -24,7 +24,7 @@ export default function newLogIn() {
 
   const postNewLogIn = newUserLoggingIn => {
     axios
-      .post('https://reqres.in/api/orders', newUserLogIn)
+      .post('', newUserLogIn)
       .then((res) => {
         setOrder([...order, res.data,])
         setFormValues(initialFormValues);
