@@ -13,6 +13,7 @@
     "@testing-library/user-event": "^12.8.3",
     "axios": "^0.21.4",
     "babel-plugin-glsl": "^1.0.0",
+    "emailjs-com": "^3.2.0",
     "glsl-noise": "^0.0.0",
     "glslify": "^7.1.1",
     "react": "^17.0.2",
