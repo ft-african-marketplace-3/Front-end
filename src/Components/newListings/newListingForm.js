@@ -2,9 +2,9 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 import '../App.css';
 
-export default function newListingForm(props) {
+export default function NewListingForm(props) {
 
-    const { submit, values, disabled, errors } = props
+    const { submit, setValues, values, disabled, errors } = props
 
     const history = useHistory();
 
@@ -58,11 +58,21 @@ export default function newListingForm(props) {
                         onChange={onChange}  value={values.itemType} name='itemType'
                     >
                         <option value=''>- Type of Item -</option>
-                        <option value='produce'>Produce</option>
-                        <option value='baked-goods'>Baked Goods</option>
-                        <option value='jewelry'>Jewelry</option>
-                        <option value='clothing'>Clothing</option>
-                        <option value='home'>Home Decor</option>
+                        <option value='animal'>Livestock, Poultry, Fish, Bees, and their Products</option>
+                        <option value='beans'>Beans and Legumes</option>
+                        <option value='cereal'>Cereal `(Maize, Rice and Other)`</option>
+                        <option value='clothes'>Clothing and Shoes</option>
+                        <option value='cosmetics'>Cosmetics</option>
+                        <option value='fruits'>Fruits</option>
+                        <option value='other'>Other `(Coffee, cotton, Tea, Tobacco, Vanilla, etc)`</option>
+                        <option value='peas'>Peas</option>
+                        <option value='roots-tubers'>Roots and Tubers</option>
+                        <option value='seeds-nuts'>Seeds and Nuts</option>
+                        <option value='timber'>Timber</option>
+                        <option value='veggies'>Vegetables</option>
+                        
+                        
+                        
                     </select>
                 </label>
                     <br/>

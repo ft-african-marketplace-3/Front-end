@@ -10,7 +10,7 @@ const listingSchema =yup.object().shape({
             .required('The price of your item is required.'),
         itemType: yup
             .string()
-            .oneOf(['produce', 'baked-goods', 'jewelry', 'clothing', 'home'], 'Please select a sales category for your item.'),
+            .oneOf(['animal', 'beans', 'cereal', 'clothes', 'cosmetics', 'fruits', 'other', 'peas', 'roots-tubers', 'seeds-nuts', 'timber', 'veggies'], 'Please select a sales category for your item.'),
         itemDescription: yup
             .string()
             .required('A description of your item is required.')
