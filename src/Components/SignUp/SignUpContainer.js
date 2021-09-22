@@ -110,7 +110,7 @@ export default function NewUser() {
 const StyledSignUp = styled.div `
 font-family: 'Roboto Condensed', sans-serif;
 width:100%;
-height:93vh;
+height:110vh;
 display: flex;
 justify-content: center;
 background: linear-gradient(155deg, rgb(29, 26, 26), rgb(29, 26, 26), darkgray);
@@ -141,20 +141,20 @@ form{
     
 }
 .info{
-  height: 20vh;
+  height: 60vh;
   display: flex;
   flex-direction: column;
 }
 h2{
   font-family: 'Alegreya Sans SC', sans-serif;
-  margin-top: 10%;
+  margin-top: 5%;
 }
 label{
   text-align: left;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 10%;
+  margin-top: 5%;
 
 }
 input {
@@ -178,14 +178,14 @@ input {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 10%;
+  margin-bottom: 1%;
 }
 
 #signup-button{
     width: 60%;
     height: 3rem;
     border-radius: 2.5rem;
-    margin-top: 7%;
+    margin-top: 1%;
     font-size: 1rem;
     transition: 0.5s;
     color: #e5e5e5;
@@ -193,7 +193,18 @@ input {
     text-transform: uppercase;
     background-color: #008b57;
   }
-  #login-button:hover {
+.termsOfService{
+    
+    text-align:center;
+      display: flex;
+    label{
+      justify-content:right;
+      width:25%;
+      align-items:center;
+      margin: auto 0;
+    }
+  }
+  #signup-button:hover {
     
     color: #ffffff;
     filter: brightness(120%);

@@ -30,9 +30,9 @@ export default function SignUpForm(props) {
                         name='name'
                         type='text'
                         isValid={
-    !errors.confirmPassword &&
-    values.password
-}
+                        !errors.confirmPassword &&
+                        values.password
+                        }
                     />
                 </label>
                 <br/>
@@ -80,19 +80,21 @@ export default function SignUpForm(props) {
                     />
                 </label>
                 <br/>
-                <label htmlFor = 'termsOfService'> 
-                    <input
-                        name='termsOfService'
-                        onChange={onChange}
-                        checked={values.termsOfService}
-                        type='checkbox'
-                    />
-                </label>I Agree to the Terms and Conditions of Service
+                <div className="termsOfService">
+                    <label htmlFor = 'termsOfService' > 
+                        <input
+                            name='termsOfService'
+                            onChange={onChange}
+                            checked={values.termsOfService}
+                            type='checkbox'
+                        />
+                    </label>I Agree to the Terms and Conditions of Service
+                </div>
                 </div>
                 <button 
                     id="signup-button" 
                     disabled={disabled}
-                    >Log In
+                    >Sign Up
                 </button>
                 <div className='current-user'>
                     <a href="/login" className='login-link'>Already Have an Account? Log in to your Field Market Account Here</a> 
