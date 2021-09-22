@@ -1,16 +1,9 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
 import errors from './LoginContainter'
 
 export default function LogInForm(props) {
     const { submit, values, update, disabled } = props
-    console.log(props);
-
-    const history = useHistory();
-
-    const loginRoute = () => {
-        history.push("/");
-    }
+    
 
     const onChange = evt => {
         const name = evt.target.name;
@@ -18,14 +11,8 @@ export default function LogInForm(props) {
         update(name, value);
       }
 
-    const onSubmit = (evt) => {
-        history.push("/");
-        evt.preventDefault();
-        submit();
-    }
-
     return(
-        <form className='form-container login' onSubmit={onSubmit}>
+        <form className='form-container login' onSubmit={submit}>
             <div className='login-form submit'>
                 <h2>Log-In</h2>
                 <div className='errors'>
@@ -55,7 +42,6 @@ export default function LogInForm(props) {
                 </div>
                 <button 
                     id="login-button" 
-                    // onClick={loginRoute} 
                     disabled={disabled}
                     >Log In
                 </button>

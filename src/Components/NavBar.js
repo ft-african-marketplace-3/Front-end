@@ -11,6 +11,7 @@ export default function NavBar() {
 
   const history = useHistory();
   const [active, setActive] = useState(true)
+  const isLoggedIn = localStorage.getItem("token");
 
   const handleAbout = (e) => {
     e.preventDefault();
@@ -43,6 +44,8 @@ export default function NavBar() {
               </NavLink>
               <div className={"right"}>   
               {active ? "" : <NavLink to="/"onClick={handleRemove}>HOME</NavLink>}
+              {isLoggedIn ? <NavLink to="/listing">LISTING</NavLink>:<div></div> }
+              { isLoggedIn ? <p>Welcome {localStorage.getItem("username")}</p>:<div></div>}
               <NavLink to="/about" onClick={handleAbout}>ABOUT</NavLink>  
               <NavLink to="/contact" onClick={handleContact}>CONTACT</NavLink>
               <NavLink to="/login" onClick={handleLogin}>LOGIN</NavLink>

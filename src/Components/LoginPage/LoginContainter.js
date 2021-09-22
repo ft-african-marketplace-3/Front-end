@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from "react";
+import { useHistory } from 'react-router-dom';
 import LogInForm from './Login';
 import styled from 'styled-components'
 import schema from '../validations/loginSchema';
@@ -14,31 +15,36 @@ const initialFormErrors = {
     password: '',
 }
 
-const initialLogIn = []
+// const initialLogIn = []
 const initialDisabled = true
 
 export default function LogIn() {
-  const [logIn, setLogIn] = useState(initialLogIn)
+  // const [logIn, setLogIn] = useState(initialLogIn)
   const [formValues, setFormValues] = useState(initialFormValues)
   const [formErrors, setFormErrors] = useState(initialFormErrors)
   const [disabled, setDisabled] = useState(initialDisabled)
+
+  const { push } = useHistory();
 
   const updateForm = (inputName, inputValue) => {
     setFormValues({ ...formValues, [inputName]: inputValue});
   }
 
 
-  const postNewLogIn = newUserLoggingIn => {
+  const postNewLogIn = e => {
+    e.preventDefault();
     axios
-      .post('', newUserLoggingIn)
-      .then((res) => {
-        setLogIn([...logIn, res.data,])
-        setFormValues(initialFormValues);
-        console.log('Here is postNewlogin', postNewLogIn)
-      }).catch(err => {
-        debugger;
-        console.error(err);
-        setFormValues(initialFormValues)
+      .post('https://fieldmarketbackend.herokuapp.com/api/users', formValues)
+      .then(resp => {
+        console.log(resp);
+        localStorage.setItem("token", resp.data.token);
+        localStorage.setItem("role", resp.data.role);
+        localStorage.setItem("username", resp.data.username);
+        push('/listing');
+      })
+      .catch(err => {
+        debugger
+        console.log(err);
       })
   }
 
