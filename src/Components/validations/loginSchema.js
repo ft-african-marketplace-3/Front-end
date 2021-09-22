@@ -8,8 +8,7 @@ const loginSchema =yup.object().shape({
     password: yup
         .string()
         .trim()
-        .required('Password is required!')
-
+        .required('Password is required!'),
 
     })
     export default loginSchema;
