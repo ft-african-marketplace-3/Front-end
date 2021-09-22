@@ -5,7 +5,7 @@ import Contact from "./Components/Contact"
 import NavBar from "./Components/NavBar"
 import Home from "./Components/Home"
 // import SignUp from "./Components/SignUp"
-// import Login from "./Components/Login"
+import LogIn from './Components/LoginPage/LoginContainter.js'
 // import About from "./Components/About"
 
 export default function App() {
@@ -14,10 +14,12 @@ export default function App() {
       <NavBar />
       <Switch>
         {/* <Route path={"/about"} component={}/>
+
         <Route path={"/signup"} component={}/>
         <Route path={"/login"} component={}/> */}
         <Route path={"/contact"} component={Contact} />
         <Route path={"/"} component={Home} />
+
       </Switch>
     </StyledApp>
   )

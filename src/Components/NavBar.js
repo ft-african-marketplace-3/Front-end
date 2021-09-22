@@ -1,29 +1,56 @@
-import React from "react"
-import { NavLink } from "react-router-dom"
+
+import React, {useEffect, useState} from "react";
+import { NavLink, useHistory } from 'react-router-dom';
+
 import logo from "./Assets/fm.jpg"
 import smallLogo from "./Assets/smallfm.png"
 
 import styled from "styled-components"
 
 export default function NavBar() {
-  return (
-    <StyledNav>
-      <NavLink to="/" className={"left"}>
-        <img src={logo} alt={"Field market logo"} className={"logoBig"} />
-        <img
-          src={smallLogo}
-          alt={"Field market logo"}
-          className={"logoSmall"}
-        />
-      </NavLink>
-      <div className={"right"}>
-        <NavLink to="/about">ABOUT</NavLink>
-        <NavLink to="/contact">CONTACT</NavLink>
-        <NavLink to="/login">LOGIN</NavLink>
-      </div>
-    </StyledNav>
-  )
-}
+
+  const history = useHistory();
+  const [active, setActive] = useState(true)
+
+  const handleAbout = (e) => {
+    e.preventDefault();
+    setActive(false)
+    history.push("/about");
+
+  }
+  const handleContact = (e) => {
+    e.preventDefault();
+    setActive(false)
+    history.push("/contact");
+  }
+  const handleLogin = (e) => {
+    e.preventDefault();
+    setActive(false)
+    history.push("/login");
+  }
+
+  const handleRemove = (e) => {
+    e.preventDefault();
+    setActive(true)
+    history.push("/");
+  }
+
+    return (
+      <StyledNav>
+              <NavLink to="/" className={"left"} onClick={handleRemove}>
+                <img src={logo} alt={"Field market logo"} className={"logoBig"}/>
+                <img src={smallLogo} alt={"Field market logo"} className={"logoSmall"}/>
+              </NavLink>
+              <div className={"right"}>   
+              {active ? "" : <NavLink to="/"onClick={handleRemove}>HOME</NavLink>}
+              <NavLink to="/about" onClick={handleAbout}>ABOUT</NavLink>  
+              <NavLink to="/contact" onClick={handleContact}>CONTACT</NavLink>
+              <NavLink to="/login" onClick={handleLogin}>LOGIN</NavLink>
+              </div>
+      </StyledNav>
+    );
+  }
+
 
 const StyledNav = styled.div`
   position: -webkit-sticky;
