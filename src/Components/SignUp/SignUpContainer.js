@@ -26,7 +26,7 @@ const initialFormErrors = {
 // const initialSignUp = []
 const initialDisabled = true
 
-export default function NewUser() {
+export default function SignUp() {
 //   const [signUp, setSignUp] = useState(initialSignUp)
   const [formValues, setFormValues] = useState(initialFormValues)
   const [formErrors, setFormErrors] = useState(initialFormErrors)
@@ -94,7 +94,7 @@ export default function NewUser() {
   }, [formValues])
 
   return(
-      <StyledSignUp className='log-in-div'>
+      <StyledSignUp className='sign-in-div'>
           <SignUpForm className='form-container'
             values={formValues}
             update={updateForm}
@@ -126,89 +126,5 @@ background: linear-gradient(155deg, rgb(29, 26, 26), rgb(29, 26, 26), darkgray);
 	100% {
 		background-position: 0% 50%;
   }}
-form{
-  text-align:center;
-  display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 5% 0;
-    color: white;
-    height: auto;
-    width: 30%;
-    border-radius: 40px;
-    background-color: rgba(255, 255, 255, 0.3);
-    padding: 1%;
-    
-}
-.info{
-  height: 20vh;
-  display: flex;
-  flex-direction: column;
-}
-h2{
-  font-family: 'Alegreya Sans SC', sans-serif;
-  margin-top: 10%;
-}
-label{
-  text-align: left;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 10%;
 
-}
-input {
-  height: 2rem;
-  width: 50%;
-  text-align: left;
-  margin-left: 1%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      background-color: #ddd;
-      padding: 2px 8px;
-      border: 2px solid #444;
-      border-radius: 1rem;
-      font-size: 1rem;
-      padding: 0 2rem;
-}
-.confirmPassword-label{
-  text-align: left;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 10%;
-}
-
-#signup-button{
-    width: 60%;
-    height: 3rem;
-    border-radius: 2.5rem;
-    margin-top: 7%;
-    font-size: 1rem;
-    transition: 0.5s;
-    color: #e5e5e5;
-    letter-spacing: 0.5rem;
-    text-transform: uppercase;
-    background-color: #008b57;
-  }
-  #login-button:hover {
-    
-    color: #ffffff;
-    filter: brightness(120%);
-  }
-  a{
-    text-decoration: none;
-    color: #edd97f;
-  }
-  a:hover{
-    text-decoration: underline;
-  }
-  .current-user{
-    height: 10vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
 `
