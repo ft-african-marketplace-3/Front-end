@@ -2,7 +2,7 @@ import React from "react";
 import errors from "./LoginContainter";
 
 export default function LogInForm(props) {
-  const { submit, values, update, disabled } = props;
+  const { incorrectAuth, submit, values, update, disabled } = props;
 
   const onChange = (evt) => {
     const name = evt.target.name;

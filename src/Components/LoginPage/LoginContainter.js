@@ -60,8 +60,10 @@ export default function LogIn() {
       })
       .catch((err) => {
         console.log(err);
+        alert("invalid username or password");
       });
   };
+
   useEffect(() => {
     schema.isValid(formValues).then((valid) => {
       setDisabled(!valid);
