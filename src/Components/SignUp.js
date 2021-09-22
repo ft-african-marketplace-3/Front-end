@@ -15,7 +15,7 @@ const initialFormValues = {
 }
 
 // Form
-function SignUp({}) {
+export default function LogIn() {
 
     // Variables
     const [users, setUsers] = useState(initialFormValues);
@@ -80,5 +80,4 @@ function SignUp({}) {
     );
 }
 
-// Exports
-export default SignUp;
+

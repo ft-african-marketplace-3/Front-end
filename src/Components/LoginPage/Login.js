@@ -27,22 +27,25 @@ export default function LogInForm(props) {
     return(
         <form className='form-container login' onSubmit={onSubmit}>
             <div className='login-form submit'>
-                <h2>Log in to your Account</h2>
+                <h2>Log-In</h2>
                 <div className='errors'>
                     <div>{errors.username}</div>
                     <div>{errors.password}</div>
                 </div>
                 <div className='info'>
-                <label> Username:
+                <label className={"username-login"}> Username:
                     <input
+                        
                         value= {values.username}
                         onChange={onChange}
                         name='username'
                         type='text'
                     />
                 </label>
-                <label> Password:
+                <br/>
+                <label className={"password-login"}> Password:
                     <input
+                        
                         value= {values.password}
                         onChange={onChange}
                         name='password'
@@ -50,15 +53,15 @@ export default function LogInForm(props) {
                     />
                 </label>
                 </div>
-                <div className='new-user'>
-                    <a href="/signup" className='signup-link'>Don't have an account? Click Here to Sign-Up!</a> 
-                </div>
                 <button 
                     id="login-button" 
-                    onClick={loginRoute} 
+                    // onClick={loginRoute} 
                     disabled={disabled}
                     >Log In
                 </button>
+                <div className='new-user'>
+                    <a href="/signup" className='signup-link'>New To Field Market? Create your Field Market Account</a> 
+                </div>
             </div>
         </form>
     )
