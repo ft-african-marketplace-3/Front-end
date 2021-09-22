@@ -7,7 +7,7 @@ import Contact from "./Components/Contact"
 import NavBar from "./Components/NavBar"
 import Home from "./Components/Home"
 import Logout from "./Components/LoginPage/Logout"
-import SignUp from "./Components/SignUp"
+import SignUp from "./Components/SignUp/SignUpContainer.js"
 import LogIn from './Components/LoginPage/LoginContainter.js'
 // import About from "./Components/About"
 
