@@ -23,7 +23,7 @@ const Contact = () => {
       <div className="leftSideDiv">
         <div className="contactInfo">
           <p>
-            Get in touch with us for more information about Sauti and our
+            Get in touch with us for more information about Field Market and our
             services. We are happy to answer any questions you may have!
           </p>
           <div className="contactDetails">

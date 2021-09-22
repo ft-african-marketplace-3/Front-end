@@ -1,7 +1,7 @@
-h1 {
+.contactMainDiv h1 {
   color: white;
 }
-p {
+.contactMainDiv p {
   color: white;
 }
 
@@ -9,6 +9,6 @@ p {
 form side of Contact us
 */
 
-div {
+.contactMainDiv {
   color: white;
 }
