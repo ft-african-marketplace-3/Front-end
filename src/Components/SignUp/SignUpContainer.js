@@ -42,7 +42,7 @@ export default function NewUser() {
   const postNewUser = e => {
     e.preventDefault();
     axios
-      .post('https://fieldmarketbackend.herokuapp.com/api/users', formValues)
+      .post('https://web44scaffolding.herokuapp.com/api/user/login', formValues)
       .then(resp => {
         console.log(resp);
         localStorage.setItem("token", resp.data.token);
