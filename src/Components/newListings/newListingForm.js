@@ -70,8 +70,7 @@ export default function NewListingForm(props) {
                         <option value='seeds-nuts'>Seeds and Nuts</option>
                         <option value='timber'>Timber</option>
                         <option value='veggies'>Vegetables</option>
-                        
-                        
+
                         
                     </select>
                 </label>
