@@ -50,7 +50,7 @@ export default function SignUpForm(props) {
         </button>
         <div className="current-user">
           <a href="/login" className="login-link">
-            Already Have an Account? Log in to your Field Market Account Here
+            Already Have an Account? 
           </a>
         </div>
       </div>

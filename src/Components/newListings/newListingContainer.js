@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import NewListingForm from "./newListingForm";
 import schema from '../validations/listingSchema';
 import axios from 'axios';
+import styled from 'styled-components'
 import * as yup from 'yup';
 
 const initialFormValues = {
@@ -22,7 +23,7 @@ const initialFormErrors = {
 const initialListing = []
 const initialDisabled = true
 
-export default function NewListing(props) {
+export default function NewListing() {
   const [listing, setListing] = useState(initialListing)
   const [formValues, setFormValues] = useState(initialFormValues)
   const [formErrors, setFormErrors] = useState(initialFormErrors)
@@ -80,7 +81,7 @@ export default function NewListing(props) {
   }, [formValues])
 
   return(
-      <div className='listing-div'>
+      <NewItemStyled className='listing-div'>
           <NewListingForm className='listing-form'
             values={formValues}
             change={inputChange}
@@ -88,6 +89,13 @@ export default function NewListing(props) {
             disabled={disabled}
             errors={formErrors}
           />
-      </div>
+      </NewItemStyled>
   )
 }
+
+const NewItemStyled = styled.div `
+
+  width: 100%;
+  height: 93vh;
+  background: chocolate;
+`

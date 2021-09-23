@@ -11,16 +11,7 @@ export default function NavBar() {
 
   const history = useHistory();
   const [active, setActive] = useState(true)
-  // const [loggedIn, SetLoggedIn] = useState(false)
   let isLoggedIn = localStorage.getItem("token");
-
-  // useEffect(() => {
-  //   if (isLoggedIn) {SetLoggedIn(true)}
-  // }, [isLoggedIn])
-
-  // const handleTest = () => {
-  //   SetLoggedIn(!loggedIn)
-  // }
 
   const handleLogOut = (e) => {
     localStorage.removeItem("token");
