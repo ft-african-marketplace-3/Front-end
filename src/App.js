@@ -8,7 +8,7 @@ import NavBar from "./Components/NavBar"
 import Home from "./Components/Home"
 import Logout from "./Components/LoginPage/Logout"
 import SignUp from "./Components/SignUp/SignUpContainer"
-import LogIn from './Components/LoginPage/LoginContainter.js'
+import LogIn from './Components/LoginPage/LoginContainer.js'
 import ItemPage from './Components/newItems/ItemPage'
 import NewListing from "./Components/newListings/newListingContainer"
 // import About from "./Components/About"
