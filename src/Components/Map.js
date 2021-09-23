@@ -19,11 +19,10 @@ export default function Map() {
         googleMapURL={
           "https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyBBm-pPoG2CnUzlbB64uT9c2Ol19UrEn3E"
         }
-        loadingElement={<div style={{ height: "100%" }} />}
-        containerElement={<div style={{ height: "100%" }} />}
-        mapElement={<div style={{ height: "100%" }} />}
+        loadingElement={<div style={{ width: "100%", height: "40vh" }} />}
+        containerElement={<div style={{ width: "100%", height: "40vh" }} />}
+        mapElement={<div style={{ width: "100%", height: "40vh" }} />}
       />
-      Map Here
     </div>
   );
 }

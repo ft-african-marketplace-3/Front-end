@@ -11,6 +11,11 @@ form side of Contact us
 
 .contactMainDiv {
   color: white;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 93vh;
 }
 
 .mapDiv {

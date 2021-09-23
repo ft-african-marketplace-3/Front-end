@@ -15,8 +15,8 @@ export default function SignUpForm(props) {
       <div className="SignUp-form submit">
         <h2>Sign Up Now!</h2>
         <div style={{ color: "#d2691e" }} className="errors">
-          <div>{errors.name}</div>
-          <div>{errors.email}</div>
+          {/* <div>{errors.name}</div> */}
+          {/* <div>{errors.email}</div> */}
           <div>{errors.username}</div>
           <div>{errors.password}</div>
           <div>{errors.confirmPassword}</div>

@@ -7,16 +7,12 @@ import axios from "axios";
 import * as yup from "yup";
 
 const initialFormValues = {
-  name: "",
-  email: "",
   username: "",
   password: "",
   confirmPassword: "",
   termsOfService: false,
 };
 const initialFormErrors = {
-  name: "",
-  email: "",
   username: "",
   password: "",
   confirmPassword: "",
@@ -38,6 +34,25 @@ export default function SignUp() {
     setFormValues({ ...formValues, [inputName]: inputValue });
   };
 
+  const postNewUser = (e) => {
+    e.preventDefault();
+    axios
+      .post(
+        "https://buildweek4-africanmarketplace.herokuapp.com/api/users/register",
+        formValues
+      )
+      .then((resp) => {
+        console.log(resp);
+        localStorage.setItem("token", resp.data.token);
+        localStorage.setItem("username", resp.data.username);
+        push("/login");
+      })
+      .catch((err) => {
+        debugger;
+        console.log(err);
+      });
+  };
+
   const validate = (name, value) => {
     yup
       .reach(schema, name)
@@ -55,20 +70,15 @@ export default function SignUp() {
     setFormValues({ ...formValues, [name]: value });
   };
 
-  const formSubmit = (e) => {
-    e.preventDefault();
-    axios
-      .post(
-        "https://web44scaffolding.herokuapp.com/api/user/register",
-        formValues
-      )
-      .then((resp) => {
-        console.log(resp);
-        push("/login");
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+  const formSubmit = () => {
+    const newUserSigningUp = {
+      name: formValues.name.trim(),
+      email: formValues.email.trim(),
+      username: formValues.username.trim(),
+      password: formValues.password.trim(),
+      confirmPassword: formValues.confirmPassword.trim(),
+    };
+    postNewUser(newUserSigningUp);
   };
   useEffect(() => {
     schema.isValid(formValues).then((valid) => {
@@ -116,7 +126,7 @@ const StyledSignUp = styled.div`
       background-position: 0% 50%;
     }
   }
-  form {
+  .form-container {
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -170,7 +180,6 @@ const StyledSignUp = styled.div`
   }
 
   #signup-button {
-    margin-top: 50vh;
     width: 60%;
     height: 3rem;
     border-radius: 2.5rem;

@@ -23,7 +23,7 @@ const WaveShaderMaterial = shaderMaterial(
       vUv = uv;
       vec3 pos = position;
       float noiseFreq = 1.0;
-      float noiseAmp = 0.4;
+      float noiseAmp = 0.1;
       vec3 noisePos = vec3(pos.x * noiseFreq + uTime, pos.y, pos.z);
       pos.z += snoise3(noisePos) * noiseAmp;
       vWave = pos.z;
@@ -64,23 +64,28 @@ const Wave = () => {
   );
 };
 
-const Scene = () => {
-  return (
-    <Canvas camera={{ fov: 12, position: [0, 0, 5] }}>
-      <Suspense fallback={null}>
-        <Wave />
-      </Suspense>
-    </Canvas>
-  );
-};
+
 
 export default function Home() {
+
+
+
+  const Scene = () => {
+    return (
+      <Canvas camera={{ fov: 12, position: [0, 0, 5] }}>
+        <Suspense fallback={null}>
+          <Wave />
+        </Suspense>
+      </Canvas>
+    );
+  };
   return (
     <>
     <StyledHome>
       <div className={"animation"}>
         <a href="/login">MISSION</a>
-        <Scene className={"image"}/>
+        <img className="front" src="https://images.unsplash.com/photo-1576181456177-2b99ac0aa1ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjgxNDQxfQ&utm_source=api_app&utm_medium=referral&utm_campaign=api-credit" alt="marketplace"/>
+         <Scene className={"image"}/> 
       </div>
       <div className={"info"}>
             <div className={'serviceContainer'}>
@@ -153,7 +158,7 @@ position: absolute;
 top: 60%;
 left: 49%;
 transform: translate(-50%,-50%);
-z-index: 1;
+z-index: 2;
 font-weight: 900;
 letter-spacing: 0.04em;
 white-space: nowrap;
@@ -172,17 +177,34 @@ a:hover{
 .animation{
   height: 80vh;
   width: 100%;
+  display: flex;
+     flex-direction: column;
+     justify-content: center;
+    align-items: center;
+    align-content: center;
 }
 @media only screen and (max-width: 1000px){ //some value
    .animation{
      width: 75%;
+     
    }
    .serviceContainer{
      height: 20vh;
    }
 
 }
-  
+
+.front{
+  width:35%;
+  height: 70vh;
+  transition: 5s;
+  position: absolute;
+  z-index: 1;
+}
+
+.front:hover{
+  filter: opacity(0);
+}
 .info{
     width: 100%;
     height: auto;

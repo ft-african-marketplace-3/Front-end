@@ -10,14 +10,16 @@ const Logout = (props) => {
         localStorage.removeItem("token");
         localStorage.removeItem("role");
         localStorage.removeItem("username");
-        push("/");
+        props.history.push('/login');
       })
       .catch((err) => {
         console.log(err);
-
-        console.log("");
+        localStorage.removeItem("token");
+        localStorage.removeItem("role");
+        localStorage.removeItem("username");
+        push("/");
       });
-  }, []);
+  }, );
 
   return <div></div>;
 };
