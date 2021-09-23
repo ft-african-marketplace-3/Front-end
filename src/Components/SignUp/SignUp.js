@@ -33,6 +33,7 @@ export default function SignUpForm(props) {
             />
           </label>
           <br />
+
           <label htmlFor="password" className={"password"}>
             {" "}
             Password:
@@ -42,6 +43,18 @@ export default function SignUpForm(props) {
               name="password"
               type="password"
               isValid={!errors.confirmPassword && values.password}
+            />
+          </label>
+          <br />
+          <label htmlFor="confirmPassword" className={"confirmPassword-label"}>
+            {" "}
+            Confirm Password:
+            <input
+              value={values.confirmPassword}
+              onChange={onChange}
+              name="confirmPassword"
+              type="password"
+              isValid={!errors.confirmPassword && values.confirmPassword}
             />
           </label>
         </div>

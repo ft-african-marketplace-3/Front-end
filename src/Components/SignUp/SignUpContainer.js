@@ -170,6 +170,7 @@ const StyledSignUp = styled.div`
   }
 
   #signup-button {
+    margin-top: 50vh;
     width: 60%;
     height: 3rem;
     border-radius: 2.5rem;
