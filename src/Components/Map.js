@@ -1,13 +1,16 @@
-import React from "react"
-import { GoogleMap, withScriptjs, withGoogleMap } from "react-google-maps"
+import React from "react";
+import { GoogleMap, withScriptjs, withGoogleMap } from "react-google-maps";
 
 function GMap() {
   return (
-    <GoogleMap defaultZoom={10} defaultCenter={{ lat: 59.95, lng: 30.33 }} />
-  )
+    <GoogleMap
+      defaultZoom={10}
+      defaultCenter={{ lat: -1.318417, lng: 36.816694 }}
+    />
+  );
 }
 
-const WrappedMap = withScriptjs(withGoogleMap(GMap))
+const WrappedMap = withScriptjs(withGoogleMap(GMap));
 
 export default function Map() {
   return (
@@ -22,5 +25,5 @@ export default function Map() {
       />
       Map Here
     </div>
-  )
+  );
 }
