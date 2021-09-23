@@ -57,6 +57,7 @@ export default function LogIn() {
         localStorage.setItem("message", resp.data.message);
         localStorage.setItem("username", resp.data.username);
         push("/listing");
+        window.location.reload(true)
       })
       .catch((err) => {
         console.log(err);

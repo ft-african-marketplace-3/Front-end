@@ -33,26 +33,6 @@ export default function SignUp() {
   const updateForm = (inputName, inputValue) => {
     setFormValues({ ...formValues, [inputName]: inputValue });
   };
-
-  const postNewUser = (e) => {
-    e.preventDefault();
-    axios
-      .post(
-        "https://buildweek4-africanmarketplace.herokuapp.com/api/users/register",
-        formValues
-      )
-      .then((resp) => {
-        console.log(resp);
-        localStorage.setItem("token", resp.data.token);
-        localStorage.setItem("username", resp.data.username);
-        push("/login");
-      })
-      .catch((err) => {
-        debugger;
-        console.log(err);
-      });
-  };
-
   const validate = (name, value) => {
     yup
       .reach(schema, name)
@@ -70,15 +50,21 @@ export default function SignUp() {
     setFormValues({ ...formValues, [name]: value });
   };
 
-  const formSubmit = () => {
-    const newUserSigningUp = {
-      name: formValues.name.trim(),
-      email: formValues.email.trim(),
-      username: formValues.username.trim(),
-      password: formValues.password.trim(),
-      confirmPassword: formValues.confirmPassword.trim(),
-    };
-    postNewUser(newUserSigningUp);
+  const formSubmit = (e) => {
+    e.preventDefault();
+    axios
+      .post(
+        "https://buildweek4-africanmarketplace.herokuapp.com/api/users/register",
+        formValues
+      )
+      .then((resp) => {
+        console.log(resp);
+        push("/login");
+      })
+      .catch((err) => {
+        debugger;
+        console.log(err);
+      });
   };
   useEffect(() => {
     schema.isValid(formValues).then((valid) => {
