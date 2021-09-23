@@ -37,7 +37,6 @@ const Contact = () => {
         </div>
       </div>
       <div className="formSideDiv">
-        Form goes here
         <form className="form" onSubmit={sendEmail}>
           <label>name</label>
           <input type="text name=" name />

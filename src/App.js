@@ -9,6 +9,7 @@ import Home from "./Components/Home"
 import Logout from "./Components/LoginPage/Logout"
 import SignUp from "./Components/SignUp/SignUpContainer"
 import LogIn from './Components/LoginPage/LoginContainter.js'
+import ItemPage from './Components/newItems/ItemPage'
 // import About from "./Components/About"
 
 export default function App() {
@@ -17,7 +18,7 @@ export default function App() {
     <StyledApp>
       <NavBar />
       <Switch>
-        {/* <PrivateRoute exact path="/listing" component={} /> */}
+        <PrivateRoute exact path="/listing" component={ItemPage} />
         {/* <Route path={"/about"} component={}/> */}
         <Route exact path={"/signup"} component={SignUp}/>
         <PrivateRoute path="/logout" component={Logout} />

@@ -42,18 +42,30 @@ export default function NavBar() {
                 <img src={logo} alt={"Field market logo"} className={"logoBig"}/>
                 <img src={smallLogo} alt={"Field market logo"} className={"logoSmall"}/>
               </NavLink>
-              <div className={"right"}>   
+              <div className={"welcome"}> 
+              { isLoggedIn ? <p>{localStorage.getItem("message")}</p>:<div></div>}
+              </div>
+              <div className={"right"}>  
               {active ? "" : <NavLink to="/"onClick={handleRemove}>HOME</NavLink>}
               {isLoggedIn ? <NavLink to="/listing">LISTING</NavLink>:<div></div> }
-              { isLoggedIn ? <p>Welcome {localStorage.getItem("username")}</p>:<div></div>}
               <NavLink to="/about" onClick={handleAbout}>ABOUT</NavLink>  
               <NavLink to="/contact" onClick={handleContact}>CONTACT</NavLink>
-              <NavLink to="/login" onClick={handleLogin}>LOGIN</NavLink>
+              {isLoggedIn ? "" : <NavLink to="/login" onClick={handleLogin}>LOGIN</NavLink>}
+              {isLoggedIn ? <NavLink to="/logout">LOGOUT</NavLink>:<div></div> }
               </div>
       </StyledNav>
     );
   }
+  //color: ${props => props.darkMode ? white : black}
 
+  const StyledNavLink = styled(NavLink)`
+  
+
+
+  &.active{
+    
+  }
+  `
 
 const StyledNav = styled.div`
   position: -webkit-sticky;
@@ -97,7 +109,7 @@ const StyledNav = styled.div`
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    width: 75%;
+    width: 65%;
     height: 7vh;
     a {
       text-decoration: none;
@@ -109,5 +121,14 @@ const StyledNav = styled.div`
     a:hover {
       color: chocolate;
     }
+  }
+  .welcome{
+    display: flex;
+    justify-content: center;
+  }
+  p{
+    font-size: 1.1rem;
+    text-decoration: underline;
+    font-weight: bold;
   }
 `

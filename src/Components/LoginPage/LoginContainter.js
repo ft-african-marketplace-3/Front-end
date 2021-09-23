@@ -50,11 +50,11 @@ export default function LogIn() {
   const formSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("https://web44scaffolding.herokuapp.com/api/user/login", formValues)
+      .post("https://buildweek4-africanmarketplace.herokuapp.com/api/users/login", formValues)
       .then((resp) => {
         console.log(resp);
         localStorage.setItem("token", resp.data.token);
-        localStorage.setItem("role", resp.data.role);
+        localStorage.setItem("message", resp.data.message);
         localStorage.setItem("username", resp.data.username);
         push("/listing");
       })
