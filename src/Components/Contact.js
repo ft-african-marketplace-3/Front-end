@@ -1,6 +1,7 @@
-import React from "react"
+import React, { Component, useState } from "react"
 import "../Contact.css"
 import emailjs from "emailjs-com"
+import Map from "../Components/Map"
 
 const Contact = () => {
   function sendEmail(e) {
@@ -49,6 +50,8 @@ const Contact = () => {
           <input type="submit" value="Send" />
         </form>
       </div>
+      <div className="googleMap">Google Map</div>
+      <Map />
     </div>
   )
 }
