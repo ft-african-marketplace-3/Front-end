@@ -22,6 +22,14 @@ export default function NavBar() {
   //   SetLoggedIn(!loggedIn)
   // }
 
+  const handleLogOut = (e) => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("message");
+    localStorage.removeItem("username");
+    history.push('/');
+    window.location.reload(true)
+  }
+
   const handleAbout = (e) => {
     e.preventDefault();
     setActive(false)
@@ -60,7 +68,7 @@ export default function NavBar() {
               <NavLink to="/about" onClick={handleAbout}>ABOUT</NavLink>  
               <NavLink to="/contact" onClick={handleContact}>CONTACT</NavLink>
               {isLoggedIn ? "" : <NavLink to="/login" onClick={handleLogin}>LOGIN</NavLink>}
-              {isLoggedIn ? <NavLink to="/logout">LOGOUT</NavLink>:<div></div> }
+              {isLoggedIn ? <NavLink to="/logout" onClick={handleLogOut}>LOGOUT</NavLink>:<div></div> }
               {/* <button onClick={handleTest}> Test</button> */}
               </div>
       </StyledNav>
