@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react"
+import React from "react"
 import "../Contact.css"
 import emailjs from "emailjs-com"
 import Map from "../Components/Map"

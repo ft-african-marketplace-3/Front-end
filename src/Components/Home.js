@@ -69,7 +69,6 @@ const Wave = () => {
 export default function Home() {
 
 
-
   const Scene = () => {
     return (
       <Canvas camera={{ fov: 12, position: [0, 0, 5] }}>
@@ -193,11 +192,14 @@ a:hover{
    }
 
 }
+canvas{
+  transition: 2s;
+}
 
 .front{
-  width:35%;
-  height: 70vh;
-  transition: 5s;
+  width:35.5%;
+  height: 70.5vh;
+  transition: 2s;
   position: absolute;
   z-index: 1;
 }

@@ -11,7 +11,16 @@ export default function NavBar() {
 
   const history = useHistory();
   const [active, setActive] = useState(true)
-  const isLoggedIn = localStorage.getItem("token");
+  // const [loggedIn, SetLoggedIn] = useState(false)
+  let isLoggedIn = localStorage.getItem("token");
+
+  // useEffect(() => {
+  //   if (isLoggedIn) {SetLoggedIn(true)}
+  // }, [isLoggedIn])
+
+  // const handleTest = () => {
+  //   SetLoggedIn(!loggedIn)
+  // }
 
   const handleAbout = (e) => {
     e.preventDefault();
@@ -52,20 +61,21 @@ export default function NavBar() {
               <NavLink to="/contact" onClick={handleContact}>CONTACT</NavLink>
               {isLoggedIn ? "" : <NavLink to="/login" onClick={handleLogin}>LOGIN</NavLink>}
               {isLoggedIn ? <NavLink to="/logout">LOGOUT</NavLink>:<div></div> }
+              {/* <button onClick={handleTest}> Test</button> */}
               </div>
       </StyledNav>
     );
   }
   //color: ${props => props.darkMode ? white : black}
 
-  const StyledNavLink = styled(NavLink)`
+  // const StyledNavLink = styled(NavLink)`
   
 
 
-  &.active{
+  // &.active{
     
-  }
-  `
+  // }
+  // `
 
 const StyledNav = styled.div`
   position: -webkit-sticky;
