@@ -10,6 +10,7 @@ import Logout from "./Components/LoginPage/Logout"
 import SignUp from "./Components/SignUp/SignUpContainer"
 import LogIn from './Components/LoginPage/LoginContainter.js'
 import ItemPage from './Components/newItems/ItemPage'
+import NewListing from "./Components/newListings/newListingContainer"
 // import About from "./Components/About"
 
 export default function App() {
@@ -17,12 +18,13 @@ export default function App() {
   return (
     <StyledApp>
       <NavBar />
-      <Switch>
+      <Switch> 
+        <Route  exact path="/listing/add-item" component={NewListing}/>
         <PrivateRoute exact path="/listing" component={ItemPage} />
-        {/* <Route path={"/about"} component={}/> */}
         <Route exact path={"/signup"} component={SignUp}/>
         <PrivateRoute path="/logout" component={Logout} />
         <Route exact path={"/login"} component={LogIn}/>
+        {/* <Route path={"/about"} component={}/> */}
         <Route path={"/contact"} component={Contact} />
         <Route path={"/"} component={Home} />
       </Switch>

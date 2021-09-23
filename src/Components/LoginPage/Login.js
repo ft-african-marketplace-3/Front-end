@@ -45,7 +45,7 @@ export default function LogInForm(props) {
         </button>
         <div className="new-user">
           <a href="/signup" className="signup-link">
-            New To Field Market? Create your Field Market Account
+            New To Field Market? 
           </a>
         </div>
       </div>
