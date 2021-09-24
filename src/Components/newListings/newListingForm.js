@@ -13,7 +13,7 @@ export default function NewListingForm(props) {
     return(
         <NewListingStyled>
         <form className='form-container' id='listing-form'  onSubmit={submit}>
-            <div classname='form-group submit'>
+            <div className='form-group submit'>
                 <h2>Add an Item to Sell</h2>
             </div>
             <div className='errors'>
