@@ -1,6 +1,5 @@
 # Lambda School Build Week:
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The purpose of Build Week is to empower you to demonstrate mastery of your learning objectives. The Build Weeks experience helps prepare you for the job market.
 
 ## Field Market
 
