@@ -117,4 +117,5 @@ const NewItemStyled = styled.div `
   width: 100%;
   height: 93vh;
   background: chocolate;
+  
 `

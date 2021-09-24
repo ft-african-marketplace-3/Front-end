@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function NewListingForm(props) {
 
-    const { submit, setFormValues, values, /*disabled,*/ errors } = props
+    const { submit, setFormValues, values, disabled, errors } = props
 
     const onChange = (evt) => {
         const { name, value } = evt.target
@@ -82,7 +82,7 @@ export default function NewListingForm(props) {
             </div>
             <button 
                 id="submit-listing-button"
-                /*disabled={disabled}*/> Save Listing
+                disabled={disabled}> Save Listing
             </button>
         </form>
     )

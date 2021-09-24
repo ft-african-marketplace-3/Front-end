@@ -2,13 +2,13 @@ import React from "react";
 // import errors from "./SignUpContainer";
 
 export default function SignUpForm(props) {
-  const { submit, values, change, disabled, errors } = props;
+  const { submit, values, update, disabled, errors } = props;
 
-  const onChange = (evt) => {
-    const { name, value, checked, type } = evt.target;
-    const valueToUse = type === "checkbox" ? checked : value;
-    change(name, valueToUse);
-  };
+  const onChange = evt => {
+    const name = evt.target.name;
+    const value = evt.target.value;
+    update(name, value);
+}
 
   return (
     <form className="form-container SignUp" onSubmit={submit}>
