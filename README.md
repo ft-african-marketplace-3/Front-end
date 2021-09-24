@@ -1,7 +1,7 @@
 # Lambda School Build Week:
 The purpose of Build Week is to empower students to demonstrate mastery of your learning objectives. The Build Weeks experience helps prepare students for the job market.
 
-## Field Market🐝🌾🐓🦀
+## *Field Market🐝🌾🐓🦀*
 
 
 ### Pitch🦾
