@@ -1,8 +1,8 @@
 import React from 'react';
-import errors from './LoginContainer';
+// import errors from './LoginContainer';
 
 export default function LogInForm(props) {
-    const { submit, values, update, disabled } = props
+    const { submit, values, update, disabled, errors } = props
     
 
 

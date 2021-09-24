@@ -4,20 +4,21 @@ import schema from '../validations/listingSchema';
 import axios from 'axios';
 import styled from 'styled-components'
 import * as yup from 'yup';
+import { useHistory } from "react-router-dom";
 
 const initialFormValues = {
-    itemName: '',
-    itemPrice: '',
-    itemType: '',
-    itemDescription: '',
-    itemLocation: '',
+    name: '',
+    price: '',
+    item_type: '',
+    description: '',
+    location: '',
 }
 const initialFormErrors = {
-    itemName: '',
-    itemPrice: '',
-    itemType: '',
-    itemDescription: '',
-    itemLocation: '',
+    name: '',
+    price: '',
+    item_type: '',
+    description: '',
+    location: '',
 }
 
 const initialListing = []
@@ -28,20 +29,21 @@ export default function NewListing() {
   const [formValues, setFormValues] = useState(initialFormValues)
   const [formErrors, setFormErrors] = useState(initialFormErrors)
   const [disabled, setDisabled] = useState(initialDisabled)
+  const { push } = useHistory()
 
-  const postNewListing = newItemListing => {
-    axios
-      .post('', newItemListing)
-      .then((res) => {
-        setListing([...listing, res.data,])
-        setFormValues(initialFormValues);
-        console.log('Here is postNewOrder', postNewListing)
-      }).catch(err => {
-        debugger;
-        console.error(err);
-        setFormValues(initialFormValues)
-      })
-  }
+  // const postNewListing = newItemListing => {
+  //   axios
+  //     .post('https://buildweek4-africanmarketplace.herokuapp.com/api/auth/newItem', newItemListing)
+  //     .then((res) => {
+  //       setListing([...listing, res.data,])
+  //       setFormValues(initialFormValues);
+  //       console.log('Here is postNewOrder', postNewListing)
+  //     }).catch(err => {
+  //       debugger;
+  //       console.error(err);
+  //       setFormValues(initialFormValues)
+  //     })
+  // }
 
   const validate = (name, value) => {
     yup
@@ -64,16 +66,32 @@ export default function NewListing() {
     setFormValues({ ...formValues, [name]: value });
   };
 
-  const formSubmit = () => {
+  const formSubmit = (e) => {
+    e.preventDefault();
       const newItemListing = {
-        itemName: formValues.itemName.trim(),
-        itemPrice: formValues.itemPrice.trim(),
-        itemType: formValues.itemType.trim(),
-        itemDescription: formValues.itemDescription.trim(),
-        itemLocation: formValues.itemLocation.trim(),
+        itemName: formValues.name.trim(),
+        itemPrice: formValues.price.trim(),
+        itemType: formValues.item_type.trim(),
+        itemDescription: formValues.description.trim(),
+        itemLocation: formValues.location.trim(),
       }
-      postNewListing(newItemListing);
+        axios
+          .post('https://buildweek4-africanmarketplace.herokuapp.com/api/auth/newItem', newItemListing)
+          .then((res) => {
+            setListing([...listing, res.data,])
+            push('/listing')
+            setFormValues(initialFormValues);
+            // newItemListing
+            // console.log(res, "this here", postNewListing)
+            console.log(newItemListing)
+          }).catch((err) => {
+            debugger;
+            console.error(err);
+            setFormValues(initialFormValues)
+            console.log('here is the catch...')
+          })
   }
+
   useEffect(() => {
     schema.isValid(formValues).then((valid) => {
       setDisabled(!valid)
@@ -88,6 +106,7 @@ export default function NewListing() {
             submit={formSubmit}
             disabled={disabled}
             errors={formErrors}
+            setFormValues={setFormValues}
           />
       </NewItemStyled>
   )

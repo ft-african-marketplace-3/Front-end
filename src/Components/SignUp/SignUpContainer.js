@@ -2,21 +2,21 @@ import React, {useState, useEffect} from "react";
 import { useHistory } from 'react-router-dom';
 import SignUpForm from './SignUp.js';
 import styled from 'styled-components'
-import schema from '../validations/loginSchema';
+import schema from '../validations/SignUpSchema';
 import axios from 'axios';
 import * as yup from 'yup';
 
 const initialFormValues = {
     username: '',
     password: '',
-    confirmPassword: '',
-    termsOfService: false,
+    // confirmPassword: '',
+    // termsOfService: false,
 }
 const initialFormErrors = {
     username: '',
     password: '',
-    confirmPassword: '',
-    termsOfService: '',
+    // confirmPassword: '',
+    // termsOfService: '',
 }
 
 // const initialSignUp = []
@@ -37,15 +37,14 @@ export default function SignUp() {
     yup
       .reach(schema, name)
       .validate(value)
-      .then((valid) => {
+      .then(valid => {
         setFormErrors(
           {...formErrors,[name]: '',}
         );
       })
       .catch((err) => {
         setFormErrors(
-          { ...formErrors,[name]: err.errors[0]}
-        );
+          { ...formErrors,[name]: err.errors[0] });
       });
   }
 
