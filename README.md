@@ -1,5 +1,5 @@
 # Lambda School Build Week:
-The purpose of Build Week is to empower you to demonstrate mastery of your learning objectives. The Build Weeks experience helps prepare you for the job market.
+The purpose of Build Week is to empower students to demonstrate mastery of your learning objectives. The Build Weeks experience helps prepare students for the job market.
 
 ## Field Market
 
@@ -9,7 +9,7 @@ The purpose of Build Week is to empower you to demonstrate mastery of your learn
 Field Market empowers small business owners, particularly women, to improve their business and
 economic opportunities to grow out of poverty.
 
-You will build a platform to enable these business owners to create listing for items they have for
+Build a platform to enable these business owners to create listing for items they have for
 sale.
 
 ### MVP
