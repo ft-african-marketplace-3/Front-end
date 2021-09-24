@@ -57,7 +57,6 @@ function About() {
       </div>
 
       <div className="aboutParagraph">
-        About our team
         <img
           src="/images/our-approach.png"
           alt="approach"
