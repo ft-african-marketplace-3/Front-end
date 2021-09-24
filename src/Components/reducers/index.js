@@ -1,5 +1,5 @@
 const isLoggedIn = {
-  loggedIn: false,
+  loggedIn: null,
 };
 
 const isLoggedReducer = (state = isLoggedIn, action) => {
