@@ -6,7 +6,7 @@ import App from "./App";
 import { StyledEngineProvider } from '@mui/material/styles';
 import { Provider } from "react-redux";
 import { createStore } from "redux";
-import reducer from "./Components/Reducers/Data";
+import reducer from "./Components/reducers/Data";
 // import isLoggedInReducer from "./Components/Reducers/User";
 import { BrowserRouter as Router } from "react-router-dom";
 

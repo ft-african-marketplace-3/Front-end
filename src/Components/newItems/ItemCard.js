@@ -1,6 +1,7 @@
 
 // Imports
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 
 import PropTypes from 'prop-types';
 import { alpha } from '@mui/material/styles';
@@ -17,6 +18,9 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Paper from '@mui/material/Paper';
 import Checkbox from '@mui/material/Checkbox';
+import AddCircleOutlineRoundedIcon from '@mui/icons-material/AddCircleOutlineRounded';
+import IconButton from '@mui/material/IconButton';
+import Tooltip from '@mui/material/Tooltip';
 import { visuallyHidden } from '@mui/utils';
 
 
@@ -142,6 +146,12 @@ EnhancedTableHead.propTypes = {
 const EnhancedTableToolbar = (props) => {
   const { numSelected } = props;
 
+  const { push } = useHistory()
+  
+  const handleClick = () => {
+    push("/listing/add-item")
+  }
+
   return (
     <Toolbar
       sx={{
@@ -153,25 +163,20 @@ const EnhancedTableToolbar = (props) => {
         }),
       }}
     >
-      {numSelected > 0 ? (
-        <Typography
-          sx={{ flex: '1 1 100%' }}
-          color="chocolate"
-          variant="subtitle1"
-          component="div"
-        >
-          {numSelected} selected
-        </Typography>
-      ) : (
         <Typography
           sx={{ flex: '1 1 100%' }}
           variant="h6"
           id="tableTitle"
           component="div"
+          color={"black"}
         >
          THE FIELD MARKET 
         </Typography>
-      )}
+        <Tooltip title="Add Item">
+          <IconButton onClick={handleClick}>
+            <AddCircleOutlineRoundedIcon />
+          </IconButton>
+        </Tooltip>
     </Toolbar>
   );
 };

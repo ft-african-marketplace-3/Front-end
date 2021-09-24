@@ -69,11 +69,11 @@ export default function NewListing() {
   const formSubmit = (e) => {
     e.preventDefault();
       const newItemListing = {
-        itemName: formValues.name.trim(),
-        itemPrice: formValues.price.trim(),
-        itemType: formValues.item_type.trim(),
-        itemDescription: formValues.description.trim(),
-        itemLocation: formValues.location.trim(),
+        name: formValues.name.trim(),
+        price: formValues.price.trim(),
+        item_type: formValues.item_type.trim(),
+        description: formValues.description.trim(),
+        location: formValues.location.trim(),
       }
         axios
           .post('https://buildweek4-africanmarketplace.herokuapp.com/api/auth/newItem', newItemListing)
@@ -95,7 +95,7 @@ export default function NewListing() {
   useEffect(() => {
     schema.isValid(formValues).then((valid) => {
       setDisabled(!valid)
-     });
+    });
   }, [formValues])
 
   return(
@@ -110,12 +110,28 @@ export default function NewListing() {
           />
       </NewItemStyled>
   )
-}
+  }
 
-const NewItemStyled = styled.div `
 
+  const NewItemStyled = styled.div `
   width: 100%;
   height: 93vh;
-  background: chocolate;
-  
-`
+  background: #5ac88a;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+
+  .listing-form{
+      background: #008b57;
+      width: 75%;
+      height: 43vh;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    
+  }
+  `
