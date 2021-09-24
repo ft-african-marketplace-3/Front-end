@@ -6,10 +6,12 @@ import smallLogo from "./Assets/smallfm.png";
 
 import styled from "styled-components";
 
-export default function NavBar() {
+export default function NavBar(props) {
   const history = useHistory();
   const [active, setActive] = useState(true);
-  let isLoggedIn = localStorage.getItem("token");
+  // let isLoggedIn = localStorage.getItem("token");
+
+  const { logged } = props
 
   const handleLogOut = (e) => {
     localStorage.removeItem("token");
@@ -52,7 +54,7 @@ export default function NavBar() {
         />
       </NavLink>
       <div className={"welcome"}>
-        {isLoggedIn ? <p>{localStorage.getItem("message")}</p> : <div></div>}
+        {logged ? <p>{localStorage.getItem("message")}</p> : <div></div>}
       </div>
       <div className={"right"}>
         {active ? (
@@ -62,21 +64,22 @@ export default function NavBar() {
             HOME
           </NavLink>
         )}
-        {isLoggedIn ? <NavLink to="/listing">LISTING</NavLink> : <div></div>}
+        {logged ? <NavLink to="/listing">LISTING</NavLink> : <div></div>}
+        {logged ? <NavLink to="/listing/add-item">ADD ITEM</NavLink> : <div></div>}
         <NavLink to="/about" onClick={handleAbout}>
           ABOUT
         </NavLink>
         <NavLink to="/contact" onClick={handleContact}>
           CONTACT
         </NavLink>
-        {isLoggedIn ? (
+        {logged ? (
           ""
         ) : (
           <NavLink to="/login" onClick={handleLogin}>
             LOGIN
           </NavLink>
         )}
-        {isLoggedIn ? (
+        {logged ? (
           <NavLink to="/logout" onClick={handleLogOut}>
             LOGOUT
           </NavLink>
