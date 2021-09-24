@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components';
 
 export default function NewListingForm(props) {
 
@@ -10,8 +11,9 @@ export default function NewListingForm(props) {
     }
 
     return(
+        <NewListingStyled>
         <form className='form-container' id='listing-form'  onSubmit={submit}>
-            <div className='form-group submit'>
+            <div classname='form-group submit'>
                 <h2>Add an Item to Sell</h2>
             </div>
             <div className='errors'>
@@ -30,6 +32,7 @@ export default function NewListingForm(props) {
                         type='text'
                     />
                 </label>
+                <br/>
                 <label> Price:
                     <input
                         value= {values.price}
@@ -38,11 +41,13 @@ export default function NewListingForm(props) {
                         type='text'
                     />
                 </label>
+                <br/>
                 <label>What kind of item is it?
                     <select
                         onChange={onChange}  value={values.item_type} name='item_type'
                     >
                         <option value=''>- Type of Item -</option>
+                        <option value='animal'>Livestock, Poultry, Fish, Bees, and their Products</option>
                         <option value='beans'>Beans and Legumes</option>
                         <option value='cereal'>Cereal (Maize, Rice and Other)</option>
                         <option value='clothes'>Clothing and Shoes</option>
@@ -54,10 +59,10 @@ export default function NewListingForm(props) {
                         <option value='roots-tubers'>Roots and Tubers</option>
                         <option value='seeds-nuts'>Seeds and Nuts</option>
                         <option value='timber'>Timber</option>
-                        <option value='veggies'>Vegetables</option>
+                        <option value='veggies'>Vegetables</option>  
                     </select>
                 </label>
-                    <br/>
+                <br/>
                 <label>Item Description:
                 <input
                     value={values.description} 
@@ -66,6 +71,7 @@ export default function NewListingForm(props) {
                     type='textarea'
                 />
                 </label>
+                <br/>
                 <label>Location:
                     <select
                         value={values.location} 
@@ -85,5 +91,19 @@ export default function NewListingForm(props) {
                 disabled={disabled}> Save Listing
             </button>
         </form>
+        </NewListingStyled>
     )
 }
+
+const NewListingStyled = styled.div `
+  width: 100%;
+  height: 93vh;
+  background: #008b57;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+
+  `
