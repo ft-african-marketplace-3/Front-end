@@ -1,23 +1,24 @@
-import React, { useState, useEffect } from "react";
-import { useHistory } from "react-router-dom";
-import SignUpForm from "./SignUp.js";
-import styled from "styled-components";
-import schema from "../validations/loginSchema";
-import axios from "axios";
-import * as yup from "yup";
+
+import React, {useState, useEffect} from "react";
+import { useHistory } from 'react-router-dom';
+import SignUpForm from './SignUp.js';
+import styled from 'styled-components'
+import schema from '../validations/SignUpSchema';
+import axios from 'axios';
+import * as yup from 'yup';
 
 const initialFormValues = {
-  username: "",
-  password: "",
-  confirmPassword: "",
-  termsOfService: false,
-};
+    username: '',
+    password: '',
+    // confirmPassword: '',
+    // termsOfService: false,
+}
 const initialFormErrors = {
-  username: "",
-  password: "",
-  confirmPassword: "",
-  termsOfService: "",
-};
+    username: '',
+    password: '',
+    // confirmPassword: '',
+    // termsOfService: '',
+}
 
 // const initialSignUp = []
 const initialDisabled = true;
@@ -37,6 +38,7 @@ export default function SignUp() {
     yup
       .reach(schema, name)
       .validate(value)
+
       .then((valid) => {
         setFormErrors({ ...formErrors, [name]: "" });
       })
@@ -193,5 +195,6 @@ const StyledSignUp = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    
   }
 `;

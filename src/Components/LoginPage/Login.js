@@ -1,8 +1,11 @@
-import React from "react";
-import errors from "./LoginContainer";
+
+import React from 'react';
+// import errors from './LoginContainer';
 
 export default function LogInForm(props) {
-  const { submit, values, update, disabled } = props;
+    const { submit, values, update, disabled, errors } = props
+    
+
 
   const onChange = (evt) => {
     const name = evt.target.name;
