@@ -14,7 +14,8 @@ export default function Map() {
     <div className="mapDiv">
       <WrappedMap
         googleMapURL={
-          "https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyBBm-pPoG2CnUzlbB64uT9c2Ol19UrEn3E"
+          "https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
+          //   &key=AIzaSyBBm-pPoG2CnUzlbB64uT9c2Ol19UrEn3E" this is the rest of the API
         }
         loadingElement={<div style={{ height: "100%" }} />}
         containerElement={<div style={{ height: "100%" }} />}

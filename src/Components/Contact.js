@@ -1,7 +1,9 @@
-import React, { Component, useState } from "react"
-import "../Contact.css"
+import React from "react"
+// import "./css/Contact.css"
 import emailjs from "emailjs-com"
 import Map from "../Components/Map"
+import "../Components/css/Contact.css"
+// import "./css/Contact"
 
 const Contact = () => {
   function sendEmail(e) {
@@ -40,7 +42,7 @@ const Contact = () => {
         Form goes here
         <form className="form" onSubmit={sendEmail}>
           <label>name</label>
-          <input type="text name=" name />
+          <input type="text=" name="name" />
 
           <label>Email</label>
           <input type="email" name="user_email" />
