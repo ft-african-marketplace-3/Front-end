@@ -11,7 +11,7 @@ import LogIn from "./Components/LoginPage/LoginContainer.js"
 import ItemPage from "./Components/newItems/ItemPage"
 import NewListing from "./Components/newListings/newListingContainer"
 import Mission from "./Components/Mssion"
-// import About from "./Components/About"
+import About from "./Components/About"
 
 export default function App() {
   return (
@@ -23,7 +23,7 @@ export default function App() {
         <Route exact path="/mission" component={Mission} />
         <Route exact path={"/signup"} component={SignUp} />
         <Route exact path={"/login"} component={LogIn} />
-        {/* <Route path={"/about"} component={}/> */}
+        <Route path={"/about"} component={About} />
         <Route path={"/contact"} component={Contact} />
         <Route path={"/"} component={Home} />
       </Switch>
