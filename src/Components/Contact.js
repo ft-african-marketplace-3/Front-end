@@ -7,7 +7,10 @@ import "../Components/css/Contact.css"
 
 const Contact = () => {
   function sendEmail(e) {
-    alert("Message sent successfully")
+    setTimeout(function () {
+      alert("Message sent successfully")
+    }, 2000)
+
     e.preventDefault()
     emailjs
       .sendForm(

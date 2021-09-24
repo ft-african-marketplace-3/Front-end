@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
   background-color: white;
-  height: 80vh;
+  height: 200vh;
   color: black;
 }
 .team {
@@ -57,4 +57,14 @@
 h3 {
   color: #d68230;
   margin-top: 0px;
+}
+
+.aboutParagraph {
+  color: black;
+  border: solid 1px black;
+  height: 80vh;
+}
+
+.aboutApproach {
+  width: ;
 }

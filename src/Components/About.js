@@ -5,7 +5,7 @@ function About() {
   return (
     <div className="aboutDiv">
       <div className="meetTheTeam">
-        Meet the <div className="team">team</div>
+        Meet the<div className="team">team</div>
       </div>
       <div className="picsAbout">
         {/* Pictures go here */}
@@ -53,6 +53,18 @@ function About() {
             className="image"
           ></img>
           Nelson Maldonado<h3>SWE</h3>
+        </div>
+      </div>
+
+      <div className="aboutParagraph">
+        About our team
+        <img
+          src="/images/our-approach.png"
+          alt="approach"
+          className="aboutApproach"
+        ></img>
+        <div className="ourTeamPara">
+          Here type what each team member contributed to FieldMarket{" "}
         </div>
       </div>
     </div>
