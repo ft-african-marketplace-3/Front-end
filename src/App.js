@@ -1,21 +1,29 @@
 import React from "react"
 import styled from "styled-components"
 import { Route, Switch } from "react-router-dom"
+import PrivateRoute from "./Components/PrivateRoute/PrivateRoute"
+
 import Contact from "./Components/Contact"
 import NavBar from "./Components/NavBar"
 import Home from "./Components/Home"
-import About from "./Components/About"
-// import SignUp from "./Components/SignUp"
-// import Login from "./Components/Login"
+import SignUp from "./Components/SignUp/SignUpContainer"
+import LogIn from "./Components/LoginPage/LoginContainer.js"
+import ItemPage from "./Components/newItems/ItemPage"
+import NewListing from "./Components/newListings/newListingContainer"
+import Mission from "./Components/Mssion"
+// import About from "./Components/About"
 
 export default function App() {
   return (
     <StyledApp>
       <NavBar />
       <Switch>
-        <Route path={"/about"} component={About} />
-        {/*<Route path={"/signup"} component={}/>
-        <Route path={"/login"} component={}/> */}
+        <Route exact path="/listing/add-item" component={NewListing} />
+        <PrivateRoute exact path="/listing" component={ItemPage} />
+        <Route exact path="/mission" component={Mission} />
+        <Route exact path={"/signup"} component={SignUp} />
+        <Route exact path={"/login"} component={LogIn} />
+        {/* <Route path={"/about"} component={}/> */}
         <Route path={"/contact"} component={Contact} />
         <Route path={"/"} component={Home} />
       </Switch>

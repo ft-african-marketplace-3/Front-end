@@ -1,14 +1,49 @@
-import React from "react"
-import { NavLink } from "react-router-dom"
-import logo from "./Assets/fm.jpg"
-import smallLogo from "./Assets/smallfm.png"
+import React, { useState } from "react";
+import { NavLink, useHistory } from "react-router-dom";
 
-import styled from "styled-components"
+import logo from "./Assets/fm.jpg";
+import smallLogo from "./Assets/smallfm.png";
+
+import styled from "styled-components";
 
 export default function NavBar() {
+  const history = useHistory();
+  const [active, setActive] = useState(true);
+  let isLoggedIn = localStorage.getItem("token");
+
+  const handleLogOut = (e) => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("message");
+    localStorage.removeItem("username");
+    history.push("/");
+    window.location.reload(true);
+  };
+
+  const handleAbout = (e) => {
+    e.preventDefault();
+    setActive(false);
+    history.push("/about");
+  };
+  const handleContact = (e) => {
+    e.preventDefault();
+    setActive(false);
+    history.push("/contact");
+  };
+  const handleLogin = (e) => {
+    e.preventDefault();
+    setActive(false);
+    history.push("/login");
+  };
+
+  const handleRemove = (e) => {
+    e.preventDefault();
+    setActive(true);
+    history.push("/");
+  };
+
   return (
     <StyledNav>
-      <NavLink to="/" className={"left"}>
+      <NavLink to="/" className={"left"} onClick={handleRemove}>
         <img src={logo} alt={"Field market logo"} className={"logoBig"} />
         <img
           src={smallLogo}
@@ -16,14 +51,51 @@ export default function NavBar() {
           className={"logoSmall"}
         />
       </NavLink>
+      <div className={"welcome"}>
+        {isLoggedIn ? <p>{localStorage.getItem("message")}</p> : <div></div>}
+      </div>
       <div className={"right"}>
-        <NavLink to="/about">ABOUT</NavLink>
-        <NavLink to="/contact">CONTACT</NavLink>
-        <NavLink to="/login">LOGIN</NavLink>
+        {active ? (
+          ""
+        ) : (
+          <NavLink to="/" onClick={handleRemove}>
+            HOME
+          </NavLink>
+        )}
+        {isLoggedIn ? <NavLink to="/listing">LISTING</NavLink> : <div></div>}
+        <NavLink to="/about" onClick={handleAbout}>
+          ABOUT
+        </NavLink>
+        <NavLink to="/contact" onClick={handleContact}>
+          CONTACT
+        </NavLink>
+        {isLoggedIn ? (
+          ""
+        ) : (
+          <NavLink to="/login" onClick={handleLogin}>
+            LOGIN
+          </NavLink>
+        )}
+        {isLoggedIn ? (
+          <NavLink to="/logout" onClick={handleLogOut}>
+            LOGOUT
+          </NavLink>
+        ) : (
+          <div></div>
+        )}
+        {/* <button onClick={handleTest}> Test</button> */}
       </div>
     </StyledNav>
-  )
+  );
 }
+//color: ${props => props.darkMode ? white : black}
+
+// const StyledNavLink = styled(NavLink)`
+
+// &.active{
+
+// }
+// `
 
 const StyledNav = styled.div`
   position: -webkit-sticky;
@@ -67,7 +139,7 @@ const StyledNav = styled.div`
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    width: 75%;
+    width: 65%;
     height: 7vh;
     a {
       text-decoration: none;
@@ -80,4 +152,13 @@ const StyledNav = styled.div`
       color: chocolate;
     }
   }
-`
+  .welcome {
+    display: flex;
+    justify-content: center;
+  }
+  p {
+    font-size: 1.1rem;
+    text-decoration: underline;
+    font-weight: bold;
+  }
+`;
