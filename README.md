@@ -25,8 +25,14 @@ name description and price
 ### OUR TEAM
 
 Andrew Cummings:https://www.linkedin.com/in/andrewmcummings/
+
 Brendon Hawkins:https://www.linkedin.com/in/brendon-h-768936207/
+
 Cain Palmer: https://www.linkedin.com/in/cain-palmer/
+
 Nelson Maldanado: https://www.linkedin.com/in/nellyedu/
+
 Rebecca Ogden: https://www.linkedin.com/in/rebecca-ogden/
+
 Jonah Tillman: https://www.linkedin.com/in/jonah-tillman/
+
