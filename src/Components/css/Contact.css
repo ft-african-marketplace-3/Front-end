@@ -1,0 +1,38 @@
+h1 {
+  color: white;
+}
+p {
+  color: white;
+}
+
+/* 
+form side of Contact us
+*/
+
+div {
+  color: white;
+}
+
+.mapDiv {
+  height: 50vh;
+  width: 100%;
+}
+
+.leftSideDiv {
+  border: solid 1px white;
+}
+
+.contactInfo {
+  border: solid 1px white;
+}
+
+.formSideDiv {
+  width: 30%;
+  border: solid 1px white;
+}
+
+.middleDiv {
+  display: flex;
+  flex-direction: row;
+  border: solid 1px white;
+}
