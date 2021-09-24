@@ -1,80 +1,101 @@
+import React, { useState } from "react";
+import { NavLink, useHistory } from "react-router-dom";
 
-import React, { useState} from "react";
-import { NavLink, useHistory } from 'react-router-dom';
+import logo from "./Assets/fm.jpg";
+import smallLogo from "./Assets/smallfm.png";
 
-import logo from "./Assets/fm.jpg"
-import smallLogo from "./Assets/smallfm.png"
-
-import styled from "styled-components"
+import styled from "styled-components";
 
 export default function NavBar() {
-
   const history = useHistory();
-  const [active, setActive] = useState(true)
+  const [active, setActive] = useState(true);
   let isLoggedIn = localStorage.getItem("token");
 
   const handleLogOut = (e) => {
     localStorage.removeItem("token");
     localStorage.removeItem("message");
     localStorage.removeItem("username");
-    history.push('/');
-    window.location.reload(true)
-  }
+    history.push("/");
+    window.location.reload(true);
+  };
 
   const handleAbout = (e) => {
     e.preventDefault();
-    setActive(false)
+    setActive(false);
     history.push("/about");
-
-  }
+  };
   const handleContact = (e) => {
     e.preventDefault();
-    setActive(false)
+    setActive(false);
     history.push("/contact");
-  }
+  };
   const handleLogin = (e) => {
     e.preventDefault();
-    setActive(false)
+    setActive(false);
     history.push("/login");
-  }
+  };
 
   const handleRemove = (e) => {
     e.preventDefault();
-    setActive(true)
+    setActive(true);
     history.push("/");
-  }
+  };
 
-    return (
-      <StyledNav>
-              <NavLink to="/" className={"left"} onClick={handleRemove}>
-                <img src={logo} alt={"Field market logo"} className={"logoBig"}/>
-                <img src={smallLogo} alt={"Field market logo"} className={"logoSmall"}/>
-              </NavLink>
-              <div className={"welcome"}> 
-              { isLoggedIn ? <p>{localStorage.getItem("message")}</p>:<div></div>}
-              </div>
-              <div className={"right"}>  
-              {active ? "" : <NavLink to="/"onClick={handleRemove}>HOME</NavLink>}
-              {isLoggedIn ? <NavLink to="/listing">LISTING</NavLink>:<div></div> }
-              <NavLink to="/about" onClick={handleAbout}>ABOUT</NavLink>  
-              <NavLink to="/contact" onClick={handleContact}>CONTACT</NavLink>
-              {isLoggedIn ? "" : <NavLink to="/login" onClick={handleLogin}>LOGIN</NavLink>}
-              {isLoggedIn ? <NavLink to="/logout" onClick={handleLogOut}>LOGOUT</NavLink>:<div></div> }
-              {/* <button onClick={handleTest}> Test</button> */}
-              </div>
-      </StyledNav>
-    );
-  }
-  //color: ${props => props.darkMode ? white : black}
+  return (
+    <StyledNav>
+      <NavLink to="/" className={"left"} onClick={handleRemove}>
+        <img src={logo} alt={"Field market logo"} className={"logoBig"} />
+        <img
+          src={smallLogo}
+          alt={"Field market logo"}
+          className={"logoSmall"}
+        />
+      </NavLink>
+      <div className={"welcome"}>
+        {isLoggedIn ? <p>{localStorage.getItem("message")}</p> : <div></div>}
+      </div>
+      <div className={"right"}>
+        {active ? (
+          ""
+        ) : (
+          <NavLink to="/" onClick={handleRemove}>
+            HOME
+          </NavLink>
+        )}
+        {isLoggedIn ? <NavLink to="/listing">LISTING</NavLink> : <div></div>}
+        <NavLink to="/about" onClick={handleAbout}>
+          ABOUT
+        </NavLink>
+        <NavLink to="/contact" onClick={handleContact}>
+          CONTACT
+        </NavLink>
+        {isLoggedIn ? (
+          ""
+        ) : (
+          <NavLink to="/login" onClick={handleLogin}>
+            LOGIN
+          </NavLink>
+        )}
+        {isLoggedIn ? (
+          <NavLink to="/logout" onClick={handleLogOut}>
+            LOGOUT
+          </NavLink>
+        ) : (
+          <div></div>
+        )}
+        {/* <button onClick={handleTest}> Test</button> */}
+      </div>
+    </StyledNav>
+  );
+}
+//color: ${props => props.darkMode ? white : black}
 
-  // const StyledNavLink = styled(NavLink)`
-  
+// const StyledNavLink = styled(NavLink)`
 
+// &.active{
 
-  // &.active{
-    
-  // }
-  // `
+// }
+// `
 
 const StyledNav = styled.div`
   position: -webkit-sticky;
@@ -131,13 +152,13 @@ const StyledNav = styled.div`
       color: chocolate;
     }
   }
-  .welcome{
+  .welcome {
     display: flex;
     justify-content: center;
   }
-  p{
+  p {
     font-size: 1.1rem;
     text-decoration: underline;
     font-weight: bold;
   }
-`
+`;

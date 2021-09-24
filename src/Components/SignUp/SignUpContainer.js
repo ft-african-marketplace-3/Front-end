@@ -1,53 +1,49 @@
-import React, {useState, useEffect} from "react";
-import { useHistory } from 'react-router-dom';
-import SignUpForm from './SignUp.js';
-import styled from 'styled-components'
-import schema from '../validations/loginSchema';
-import axios from 'axios';
-import * as yup from 'yup';
+import React, { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
+import SignUpForm from "./SignUp.js";
+import styled from "styled-components";
+import schema from "../validations/loginSchema";
+import axios from "axios";
+import * as yup from "yup";
 
 const initialFormValues = {
-    username: '',
-    password: '',
-    confirmPassword: '',
-    termsOfService: false,
-}
+  username: "",
+  password: "",
+  confirmPassword: "",
+  termsOfService: false,
+};
 const initialFormErrors = {
-    username: '',
-    password: '',
-    confirmPassword: '',
-    termsOfService: '',
-}
+  username: "",
+  password: "",
+  confirmPassword: "",
+  termsOfService: "",
+};
 
 // const initialSignUp = []
-const initialDisabled = true
+const initialDisabled = true;
 
 export default function SignUp() {
-//   const [signUp, setSignUp] = useState(initialSignUp)
-  const [formValues, setFormValues] = useState(initialFormValues)
-  const [formErrors, setFormErrors] = useState(initialFormErrors)
-  const [disabled, setDisabled] = useState(initialDisabled)
+  //   const [signUp, setSignUp] = useState(initialSignUp)
+  const [formValues, setFormValues] = useState(initialFormValues);
+  const [formErrors, setFormErrors] = useState(initialFormErrors);
+  const [disabled, setDisabled] = useState(initialDisabled);
 
   const { push } = useHistory();
 
   const updateForm = (inputName, inputValue) => {
-    setFormValues({ ...formValues, [inputName]: inputValue});
-  }
+    setFormValues({ ...formValues, [inputName]: inputValue });
+  };
   const validate = (name, value) => {
     yup
       .reach(schema, name)
       .validate(value)
       .then((valid) => {
-        setFormErrors(
-          {...formErrors,[name]: '',}
-        );
+        setFormErrors({ ...formErrors, [name]: "" });
       })
       .catch((err) => {
-        setFormErrors(
-          { ...formErrors,[name]: err.errors[0]}
-        );
+        setFormErrors({ ...formErrors, [name]: err.errors[0] });
       });
-  }
+  };
 
   const inputChange = (name, value) => {
     validate(name, value);
@@ -57,58 +53,68 @@ export default function SignUp() {
   const formSubmit = (e) => {
     e.preventDefault();
     axios
-      .post('https://buildweek4-africanmarketplace.herokuapp.com/api/users/register', formValues)
-      .then(resp => {
+      .post(
+        "https://buildweek4-africanmarketplace.herokuapp.com/api/users/register",
+        formValues
+      )
+      .then((resp) => {
         console.log(resp);
-        push('/login');
+        push("/login");
       })
-      .catch(err => {
-        debugger
+      .catch((err) => {
+        debugger;
         console.log(err);
-      })
-  }
+      });
+  };
   useEffect(() => {
     schema.isValid(formValues).then((valid) => {
-      setDisabled(!valid)
-     });
-  }, [formValues])
+      setDisabled(!valid);
+    });
+  }, [formValues]);
 
-  return(
-      <StyledSignUp className='sign-in-div'>
-          <SignUpForm className='form-container'
-            values={formValues}
-            update={updateForm}
-            change={inputChange}
-            submit={formSubmit}
-            disabled={disabled}
-            errors={formErrors}
-          />
-      </StyledSignUp>
-  )
+  return (
+    <StyledSignUp className="sign-in-div">
+      <SignUpForm
+        className="form-container"
+        values={formValues}
+        update={updateForm}
+        change={inputChange}
+        submit={formSubmit}
+        disabled={disabled}
+        errors={formErrors}
+      />
+    </StyledSignUp>
+  );
 }
 
-const StyledSignUp = styled.div `
-font-family: 'Roboto Condensed', sans-serif;
-width:100%;
-height:93vh;
-display: flex;
-justify-content: center;
-background: linear-gradient(155deg, rgb(29, 26, 26), rgb(29, 26, 26), darkgray);
-  background-size: 400% 400%;
-	animation: gradient 12s ease infinite;
-  @keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-  }}
-.form-container{
-  text-align:center;
+const StyledSignUp = styled.div`
+  font-family: "Roboto Condensed", sans-serif;
+  width: 100%;
+  height: 93vh;
   display: flex;
+  justify-content: center;
+  background: linear-gradient(
+    155deg,
+    rgb(29, 26, 26),
+    rgb(29, 26, 26),
+    darkgray
+  );
+  background-size: 400% 400%;
+  animation: gradient 12s ease infinite;
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  .form-container {
+    text-align: center;
+    display: flex;
     flex-direction: column;
     align-items: center;
     margin: 5% 0;
@@ -118,50 +124,48 @@ background: linear-gradient(155deg, rgb(29, 26, 26), rgb(29, 26, 26), darkgray);
     border-radius: 40px;
     background-color: rgba(255, 255, 255, 0.3);
     padding: 1%;
-    
-}
-.info{
-  height: 20vh;
-  display: flex;
-  flex-direction: column;
-}
-h2{
-  font-family: 'Alegreya Sans SC', sans-serif;
-  margin-top: 10%;
-}
-label{
-  text-align: left;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 10%;
+  }
+  .info {
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+  }
+  h2 {
+    font-family: "Alegreya Sans SC", sans-serif;
+    margin-top: 10%;
+  }
+  label {
+    text-align: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
+  }
+  input {
+    height: 2rem;
+    width: 50%;
+    text-align: left;
+    margin-left: 1%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ddd;
+    padding: 2px 8px;
+    border: 2px solid #444;
+    border-radius: 1rem;
+    font-size: 1rem;
+    padding: 0 2rem;
+  }
+  .confirmPassword-label {
+    text-align: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10%;
+  }
 
-}
-input {
-  height: 2rem;
-  width: 50%;
-  text-align: left;
-  margin-left: 1%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      background-color: #ddd;
-      padding: 2px 8px;
-      border: 2px solid #444;
-      border-radius: 1rem;
-      font-size: 1rem;
-      padding: 0 2rem;
-}
-.confirmPassword-label{
-  text-align: left;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 10%;
-}
-
-#signup-button{
+  #signup-button {
     width: 60%;
     height: 3rem;
     border-radius: 2.5rem;
@@ -174,21 +178,20 @@ input {
     background-color: #008b57;
   }
   #login-button:hover {
-    
     color: #ffffff;
     filter: brightness(120%);
   }
-  a{
+  a {
     text-decoration: none;
     color: #edd97f;
   }
-  a:hover{
+  a:hover {
     text-decoration: underline;
   }
-  .current-user{
+  .current-user {
     height: 10vh;
     display: flex;
     justify-content: center;
     align-items: center;
   }
-`
+`;

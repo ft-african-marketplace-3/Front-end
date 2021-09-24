@@ -33,6 +33,7 @@ export default function SignUpForm(props) {
             />
           </label>
           <br />
+
           <label htmlFor="password" className={"password"}>
             {" "}
             Password:
@@ -50,7 +51,7 @@ export default function SignUpForm(props) {
         </button>
         <div className="current-user">
           <a href="/login" className="login-link">
-            Already Have an Account? 
+            Already Have an Account?
           </a>
         </div>
       </div>
