@@ -45,25 +45,13 @@ export default function SignUpForm(props) {
               isValid={!errors.confirmPassword && values.password}
             />
           </label>
-          <br />
-          <label htmlFor="confirmPassword" className={"confirmPassword-label"}>
-            {" "}
-            Confirm Password:
-            <input
-              value={values.confirmPassword}
-              onChange={onChange}
-              name="confirmPassword"
-              type="password"
-              isValid={!errors.confirmPassword && values.confirmPassword}
-            />
-          </label>
         </div>
         <button id="signup-button" disabled={disabled}>
           sign up
         </button>
         <div className="current-user">
           <a href="/login" className="login-link">
-            Already Have an Account? 
+            Already Have an Account?
           </a>
         </div>
       </div>
