@@ -4,6 +4,7 @@ import emailjs from "emailjs-com"
 import Map from "../Components/Map"
 
 const Contact = () => {
+  
   function sendEmail(e) {
     e.preventDefault()
     emailjs

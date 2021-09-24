@@ -24,8 +24,9 @@ const ItemPage = () => {
     // Returns
     return (
         <StyledItems className = 'ItemPage'>
-            <h1 className = 'header'>Field Market Items</h1>
-            <ItemCard className = 'Items' items = {items} />
+            <div className={"dataTable"}>
+            <ItemCard className = 'Items' items = {items} dark={true}/>
+            </div>
         </StyledItems>
     );
 }
@@ -36,7 +37,22 @@ export default ItemPage;
 const StyledItems = styled.div`
 width:100%;
 height: 93vh;
+/* background:white; */
+text-align: center;
 display: flex;
 flex-direction: column;
 align-items: center;
+justify-content: center;
+align-content: center;
+
+.dataTable{
+    background: center;
+    width: 75%;
+    height: 43vh;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
 `
