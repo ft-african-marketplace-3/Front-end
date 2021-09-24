@@ -11,7 +11,7 @@ import LogIn from "./Components/LoginPage/LoginContainer.js"
 import ItemPage from "./Components/newItems/ItemPage"
 import NewListing from "./Components/newListings/newListingContainer"
 import Mission from "./Components/Mssion"
-// import About from "./Components/About"
+import About from "./Components/About"
 
 export default function App() {
 
@@ -25,8 +25,10 @@ export default function App() {
         <PrivateRoute exact path="/listing" component={ItemPage} />
         <Route exact path="/mission" component={Mission} />
         <Route exact path={"/signup"} component={SignUp} />
+        <Route exact path={"/login"} component={LogIn} />
+        <Route path={"/about"} component={About} />
         <Route exact path={"/login"} logged={isLoggedIn} component={LogIn} />
-        {/* <Route path={"/about"} component={}/> */}
+
         <Route path={"/contact"} component={Contact} />
         <Route path={"/"} component={Home} />
       </Switch>
