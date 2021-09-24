@@ -1,4 +1,5 @@
 .aboutDiv {
+  margin-top: 6vh;
   display: flex;
   flex-direction: column;
   background-color: white;
@@ -11,13 +12,14 @@
   margin-left: 6px;
 }
 .meetTheTeam {
+  padding-top: 10px;
   display: flex;
   justify-content: center;
   height: 40px;
   width: 100%;
   margin: auto;
   color: black;
-  border: solid 1px black;
+  /* border: solid 1px black; */
   font-size: 2em;
 }
 .picsAbout {
@@ -27,9 +29,9 @@
   align-items: center;
   flex-wrap: wrap;
   margin: auto;
-  border: solid 1px black;
+  /* border: solid 1px black; */
   width: 95%;
-  height: 90%;
+  height: 100vh;
 }
 
 .image {
@@ -44,11 +46,12 @@
 .picDiv {
   display: flex;
   flex-direction: column;
+
   align-items: center;
   height: 35vh;
-  width: 30%;
+  width: 30vh;
   color: black;
-  border: solid 1px black;
+  /* border: solid 1px black; */
   font-weight: 900;
 }
 h3 {
