@@ -4,7 +4,7 @@ import { Canvas, extend, useFrame, useLoader } from "@react-three/fiber";
 import { shaderMaterial } from "@react-three/drei";
 import glsl from "babel-plugin-glsl/macro";
 import styled from "styled-components";
-import { Route, Switch, Link } from "react-router-dom";
+import {  Link } from "react-router-dom";
 
 const WaveShaderMaterial = shaderMaterial(
   // Uniform
@@ -79,7 +79,7 @@ export default function Home() {
     <>
       <StyledHome>
         <div className={"animation"}>
-          <Link to="/login">MISSION</Link>
+          <Link to="/mission">MISSION</Link>
           {/* <a href="/login">MISSION</a> */}
 
           <img

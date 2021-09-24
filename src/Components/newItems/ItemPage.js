@@ -6,6 +6,9 @@ import styled from 'styled-components'
 
 import ItemCard from './ItemCard';
 
+
+
+
 // ItemPage
 const ItemPage = () => {
     const [items, setItems] = useState([]);

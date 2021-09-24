@@ -13,7 +13,7 @@ export default function SignUpForm(props) {
   return (
     <form className="form-container SignUp" onSubmit={submit}>
       <div className="SignUp-form submit">
-        <h2>Sign Up Now!</h2>
+        <h2>Sign-Up</h2>
         <div style={{ color: "#d2691e" }} className="errors">
           {/* <div>{errors.name}</div> */}
           {/* <div>{errors.email}</div> */}
@@ -22,25 +22,27 @@ export default function SignUpForm(props) {
           {/* <div>{errors.confirmPassword}</div> */}
         </div>
         <div className="info">
-          <label htmlFor="username" className={"label"}>
+          <label htmlFor="username" className={"username-login"}>
             {" "}
             Username:
             <input
               value={values.username}
               onChange={onChange}
               name="username"
+              placeholder="Enter Username"
               type="text"
             />
           </label>
           <br />
 
-          <label htmlFor="password" className={"password"}>
+          <label htmlFor="password" className={"password-login"}>
             {" "}
             Password:
             <input
               value={values.password}
               onChange={onChange}
               name="password"
+              placeholder="Enter Password"
               type="password"
             //   isValid={!errors.confirmPassword && values.password}
             />
@@ -76,7 +78,7 @@ export default function SignUpForm(props) {
         </button>
         <div className="current-user">
           <a href="/login" className="login-link">
-            Already Have an Account?
+            Have an Account?
           </a>
         </div>
       </div>

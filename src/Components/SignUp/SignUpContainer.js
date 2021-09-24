@@ -143,6 +143,29 @@ const StyledSignUp = styled.div`
     align-items: center;
     margin-top: 10%;
   }
+  .username-login {
+    text-align: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
+  }
+  .username-login input {
+    height: 2rem;
+    width: 50%;
+    text-align: left;
+    margin-left: 1%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ddd;
+    padding: 2px 8px;
+    border: 2px solid #444;
+    border-radius: 1rem;
+    font-size: 1rem;
+    padding: 0 2rem;
+  }
   input {
     height: 2rem;
     width: 50%;
@@ -159,12 +182,27 @@ const StyledSignUp = styled.div`
     font-size: 1rem;
     padding: 0 2rem;
   }
-  .confirmPassword-label {
+  .password-login {
     text-align: left;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 10%;
+    margin-top: 0%;
+  }
+  .password-login input {
+    height: 2rem;
+    width: 50%;
+    margin-left: 1%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ddd;
+    padding: 2px 8px;
+    border: 2px solid #444;
+    border-radius: 1rem;
+    font-size: 1rem;
+    padding: 0 2rem;
   }
 
   #signup-button {
@@ -179,7 +217,7 @@ const StyledSignUp = styled.div`
     text-transform: uppercase;
     background-color: #008b57;
   }
-  #login-button:hover {
+  #signup-button:hover {
     color: #ffffff;
     filter: brightness(120%);
   }

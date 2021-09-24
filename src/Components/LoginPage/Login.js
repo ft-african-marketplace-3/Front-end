@@ -28,6 +28,7 @@ export default function LogInForm(props) {
             <input
               value={values.username}
               onChange={onChange}
+              placeholder="Enter Username"
               name="username"
               type="text"
             />
@@ -39,6 +40,7 @@ export default function LogInForm(props) {
             <input
               value={values.password}
               onChange={onChange}
+              placeholder="Enter Password"
               name="password"
               type="password"
             />
@@ -49,7 +51,7 @@ export default function LogInForm(props) {
         </button>
         <div className="new-user">
           <a href="/signup" className="signup-link">
-            New To Field Market? Create your Field Market Account
+           Create An Account?
           </a>
         </div>
       </div>

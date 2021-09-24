@@ -6,11 +6,11 @@ import PrivateRoute from './Components/PrivateRoute/PrivateRoute'
 import Contact from "./Components/Contact"
 import NavBar from "./Components/NavBar"
 import Home from "./Components/Home"
-import Logout from "./Components/LoginPage/Logout"
 import SignUp from "./Components/SignUp/SignUpContainer"
 import LogIn from './Components/LoginPage/LoginContainer.js'
 import ItemPage from './Components/newItems/ItemPage'
 import NewListing from "./Components/newListings/newListingContainer"
+import Mission from "./Components/Mssion"
 // import About from "./Components/About"
 
 export default function App() {
@@ -21,8 +21,8 @@ export default function App() {
       <Switch> 
         <Route  exact path="/listing/add-item" component={NewListing}/>
         <PrivateRoute exact path="/listing" component={ItemPage} />
+        <Route exact path="/mission" component={Mission}/>
         <Route exact path={"/signup"} component={SignUp}/>
-        <PrivateRoute path="/logout" component={Logout} />
         <Route exact path={"/login"} component={LogIn}/>
         {/* <Route path={"/about"} component={}/> */}
         <Route path={"/contact"} component={Contact} />
