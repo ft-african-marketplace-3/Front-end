@@ -25,7 +25,7 @@ const ItemPage = () => {
     // Returns
     return (
         <StyledItems className = 'ItemPage'>
-            <Link to="/new-listing">Add New Listing</Link>
+            <Link to="/add-item">Add New Listing</Link>
             <div className={"dataTable"}>
             <ItemCard className = 'Items' items = {items} dark={true}/>
             </div>
