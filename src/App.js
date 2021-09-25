@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { Route, Switch, useHistory } from "react-router-dom"
+import { Route, Switch } from "react-router-dom"
 import PrivateRoute from "./Components/PrivateRoute/PrivateRoute"
 
 import Contact from "./Components/Contact"
@@ -28,7 +28,6 @@ export default function App() {
         <Route exact path={"/login"} component={LogIn} />
         <Route path={"/about"} component={About} />
         <Route exact path={"/login"} logged={isLoggedIn} component={LogIn} />
-
         <Route path={"/contact"} component={Contact} />
         <Route path={"/"} component={Home} />
       </Switch>

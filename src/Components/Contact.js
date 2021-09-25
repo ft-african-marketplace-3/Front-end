@@ -59,13 +59,12 @@ const Contact = () => {
             <input type="email" name="user_email" />
 
             <label>Message</label>
-            <textarea name="message" rows="4" />
+            <textarea style={{resize: 'none'}} name="message" rows="4" />
             <input type="submit" value="Send" />
           </form>
         </div>
-      </div>
-      <div className="googleMap">Google Map</div>
       <Map />
+      </div>
     </div>
   )
 }
