@@ -1,10 +1,10 @@
-import { FETCH_START, FETCH_SUCCESS, FETCH_FAIL } from "../Actions/index"
+import { FETCH_START, FETCH_SUCCESS, FETCH_FAIL } from "../actions/index";
 
 const initialState = {
   items: [],
   loading: false,
   err: "",
-}
+};
 
 const dataLoadReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -14,24 +14,24 @@ const dataLoadReducer = (state = initialState, action) => {
         items: {},
         isFetching: true,
         error: "",
-      }
+      };
     case FETCH_SUCCESS:
       return {
         ...state,
         items: action.payload,
         isFetching: false,
         error: "",
-      }
+      };
     case FETCH_FAIL:
       return {
         ...state,
         items: {},
         isFetching: false,
         error: action.payload,
-      }
+      };
     default:
-      return state
+      return state;
   }
-}
+};
 
-export default dataLoadReducer
+export default dataLoadReducer;

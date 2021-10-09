@@ -1,14 +1,12 @@
-
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
-import { StyledEngineProvider } from '@mui/material/styles';
+import { StyledEngineProvider } from "@mui/material/styles";
 import { Provider } from "react-redux";
 import { createStore } from "redux";
-import reducer from "./Components/reducers/Index";
+import reducer from "./Components/Reducers/Index";
 import { BrowserRouter as Router } from "react-router-dom";
-
 
 const store = createStore(
   reducer,
@@ -17,14 +15,13 @@ const store = createStore(
 
 // const store = createStore(reducer)
 
-
 ReactDOM.render(
-  <StyledEngineProvider injectFirst>  
+  <StyledEngineProvider injectFirst>
     <Provider store={store}>
       <Router>
         <App />
       </Router>
     </Provider>
-  </StyledEngineProvider>  ,
-  document.getElementById('root')
+  </StyledEngineProvider>,
+  document.getElementById("root")
 );
