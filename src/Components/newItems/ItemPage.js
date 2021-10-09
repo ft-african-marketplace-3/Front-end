@@ -16,7 +16,6 @@ const ItemPage = () => {
     useEffect(() => {
         axios.get('https://buildweek4-africanmarketplace.herokuapp.com/api/auth/items')
         .then(res => {
-            console.log(res)
             setItems(res.data)
         })
         .catch(err => {

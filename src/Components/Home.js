@@ -188,7 +188,10 @@ const StyledHome = styled.div`
     align-content: center;
   }
   @media only screen and (max-width: 1000px) {
-    //some value
+    .front{
+      width:75%;
+      
+    }
     .animation {
       width: 75%;
     }
@@ -250,16 +253,10 @@ const StyledHome = styled.div`
     height: auto;
     background: linear-gradient(155deg, gold, chocolate, brown, darkred);
     background-size: 400% 400%;
-    animation: gradient 12s ease infinite;
+    animation: gradient 12s alternate-reverse infinite;
     @keyframes gradient {
-      0% {
-        background-position: 0% 50%;
-      }
-      50% {
-        background-position: 100% 50%;
-      }
-      100% {
-        background-position: 0% 50%;
+      to{
+        background-position: 100%;
       }
     }
     h3 {

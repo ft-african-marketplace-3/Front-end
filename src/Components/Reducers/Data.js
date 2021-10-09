@@ -6,7 +6,7 @@ const initialState = {
   err: "",
 }
 
-const reducer = (state = initialState, action) => {
+const dataLoadReducer = (state = initialState, action) => {
   switch (action.type) {
     case FETCH_START:
       return {
@@ -34,4 +34,4 @@ const reducer = (state = initialState, action) => {
   }
 }
 
-export default reducer
+export default dataLoadReducer
