@@ -1,11 +1,8 @@
-
-import React from 'react';
+import React from "react";
 // import errors from './LoginContainer';
 
 export default function LogInForm(props) {
-    const { submit, values, update, disabled, errors } = props
-    
-
+  const { submit, values, update, disabled, errors } = props;
 
   const onChange = (evt) => {
     const name = evt.target.name;
@@ -51,7 +48,7 @@ export default function LogInForm(props) {
         </button>
         <div className="new-user">
           <a href="/signup" className="signup-link">
-           Create An Account?
+            Create An Account?
           </a>
         </div>
       </div>
