@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { loggingin } from "../actions/index";
+import { loggingIn } from "../actions/index";
 import LogInForm from "./Login";
 import styled from "styled-components";
 import schema from "../validations/loginSchema";
@@ -61,7 +61,7 @@ export default function LogIn() {
         localStorage.setItem("token", resp.data.token);
         localStorage.setItem("message", resp.data.message);
         localStorage.setItem("username", resp.data.username);
-        dispatch(loggingin());
+        dispatch(loggingIn());
         push("/listing");
         // window.location.reload(true);
       })

@@ -26,8 +26,8 @@ export default function NavBar(props) {
     localStorage.removeItem("username");
     dispatch(loggingOut());
 
-    push("/login");
-    // window.location.reload(true);
+    push("/");
+    window.location.reload(true);
   };
 
   const handleAbout = (e) => {
@@ -51,7 +51,7 @@ export default function NavBar(props) {
     setActive(true);
     history.push("/");
   };
-  const islogged = loggedStatus.isLoggedReducer;
+  const isLogged = loggedStatus.isLoggedReducer;
 
   return (
     <StyledNav>
@@ -64,7 +64,7 @@ export default function NavBar(props) {
         />
       </NavLink>
       <div className={"welcome"}>
-        {islogged ? <p>{localStorage.getItem("message")}</p> : <div></div>}
+        {isLogged ? <p>{localStorage.getItem("message")}</p> : <div></div>}
       </div>
       <div className={"right"}>
         {active ? (
@@ -74,8 +74,8 @@ export default function NavBar(props) {
             HOME
           </NavLink>
         )}
-        {islogged ? <NavLink to="/listing">LISTING</NavLink> : <div></div>}
-        {islogged ? (
+        {isLogged ? <NavLink to="/listing">LISTING</NavLink> : <div></div>}
+        {isLogged ? (
           <NavLink to="/listing/add-item">ADD ITEM</NavLink>
         ) : (
           <div></div>
@@ -86,14 +86,14 @@ export default function NavBar(props) {
         <NavLink to="/contact" onClick={handleContact}>
           CONTACT
         </NavLink>
-        {islogged ? (
+        {isLogged ? (
           ""
         ) : (
           <NavLink to="/login" onClick={handleLogin}>
             LOGIN
           </NavLink>
         )}
-        {islogged ? (
+        {isLogged ? (
           <NavLink to="/logout" onClick={handleLogOut}>
             LOGOUT
           </NavLink>

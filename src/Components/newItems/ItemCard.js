@@ -1,4 +1,4 @@
-
+ 
 // Imports
 import React from 'react';
 import { useHistory } from 'react-router-dom';
@@ -201,8 +201,8 @@ export default function EnhancedTable(prop) {
 
   const handleSelectAllClick = (event) => {
     if (event.target.checked) {
-      const newSelecteds = items.map((n) => n.name);
-      setSelected(newSelecteds);
+      const newSelected = items.map((n) => n.name);
+      setSelected(newSelected);
       return;
     }
     setSelected([]);

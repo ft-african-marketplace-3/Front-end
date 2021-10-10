@@ -7,14 +7,15 @@ export const FETCH_START = "FETCH_START";
 export const FETCH_SUCCESS = "FETCH_SUCCESS";
 export const FETCH_FAIL = "FETCH_FAIL";
 
-export const getPerson = () => {
+export const getData = () => {
   return (dispatch) => {
     dispatch(fetchStart());
 
     axios
       .get("https://buildweek4-africanmarketplace.herokuapp.com/api/auth/items")
       .then((resp) => {
-        dispatch(fetchSuccess(resp.data.results[0]));
+        console.log(resp)
+        dispatch(fetchSuccess(resp.data[1]));
         // dispatch({type: FETCH_SUCCESS, payload:resp.data.results[0] });
       })
       .catch((err) => {
@@ -28,8 +29,8 @@ export const fetchStart = () => {
   return { type: FETCH_START };
 };
 
-export const fetchSuccess = (person) => {
-  return { type: FETCH_SUCCESS, payload: person };
+export const fetchSuccess = (item) => {
+  return { type: FETCH_SUCCESS, payload: item };
 };
 
 export const fetchFail = (error) => {
@@ -38,7 +39,7 @@ export const fetchFail = (error) => {
 
 //-------------------------------  action  for logging in  -------------
 
-export const loggingin = () => {
+export const loggingIn = () => {
   return { type: SIGN_IN };
 };
 export const loggingOut = () => {
