@@ -1,9 +1,16 @@
-import { FETCH_START, FETCH_SUCCESS, FETCH_FAIL } from "../actions/index";
+import { FETCH_START, FETCH_SUCCESS, FETCH_FAIL } from "../actions/index"
 
 const initialState = {
-  items: [],
-  loading: false,
-  err: "",
+item: {
+  item_id: null,
+  location: null,
+  name: "",
+  item_type: "",
+  description: "",
+  price: null,
+},
+isFetching: false,
+error: ''
 };
 
 const dataLoadReducer = (state = initialState, action) => {
