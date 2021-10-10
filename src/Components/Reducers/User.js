@@ -1,16 +1,18 @@
-const isLoggedIn = {
-  loggedIn: null,
-};
+import { SIGN_IN, SIGN_OUT } from "../actions/index";
 
-const isLoggedReducer = (state = isLoggedIn, action) => {
+// const isLoggedIn = {
+//   loggedIn: false,
+// };
+
+const isLoggedReducer = (state = false, action) => {
   switch (action.type) {
-    case "SIGN_IN":
+    case SIGN_IN:
       return {
-        loggedIn: true,
+        state: true,
       };
-    case "SIGN_OUT":
+    case SIGN_OUT:
       return {
-        loggedIn: false,
+        state: false,
       };
     default:
       return state;
