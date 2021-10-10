@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import { NavLink, useHistory } from "react-router-dom";
+import { loggingOut } from "./actions/index";
+
+import { useSelector, useDispatch } from "react-redux";
 
 import logo from "./Assets/fm.jpg";
 import smallLogo from "./Assets/smallfm.png";
@@ -7,18 +10,24 @@ import smallLogo from "./Assets/smallfm.png";
 import styled from "styled-components";
 
 export default function NavBar(props) {
+  const dispatch = useDispatch();
   const history = useHistory();
   const [active, setActive] = useState(true);
+  const loggedStatus = useSelector((state) => state);
+  const { push } = useHistory();
+
   // let isLoggedIn = localStorage.getItem("token");
 
-  const { logged } = props
+  // const { logged } = props;
 
   const handleLogOut = (e) => {
     localStorage.removeItem("token");
     localStorage.removeItem("message");
     localStorage.removeItem("username");
-    history.push("/");
-    window.location.reload(true);
+    dispatch(loggingOut());
+
+    push("/login");
+    // window.location.reload(true);
   };
 
   const handleAbout = (e) => {
@@ -42,6 +51,7 @@ export default function NavBar(props) {
     setActive(true);
     history.push("/");
   };
+  const islogged = loggedStatus.isLoggedReducer;
 
   return (
     <StyledNav>
@@ -54,7 +64,7 @@ export default function NavBar(props) {
         />
       </NavLink>
       <div className={"welcome"}>
-        {logged ? <p>{localStorage.getItem("message")}</p> : <div></div>}
+        {islogged ? <p>{localStorage.getItem("message")}</p> : <div></div>}
       </div>
       <div className={"right"}>
         {active ? (
@@ -64,22 +74,26 @@ export default function NavBar(props) {
             HOME
           </NavLink>
         )}
-        {logged ? <NavLink to="/listing">LISTING</NavLink> : <div></div>}
-        {logged ? <NavLink to="/listing/add-item">ADD ITEM</NavLink> : <div></div>}
+        {islogged ? <NavLink to="/listing">LISTING</NavLink> : <div></div>}
+        {islogged ? (
+          <NavLink to="/listing/add-item">ADD ITEM</NavLink>
+        ) : (
+          <div></div>
+        )}
         <NavLink to="/about" onClick={handleAbout}>
           ABOUT
         </NavLink>
         <NavLink to="/contact" onClick={handleContact}>
           CONTACT
         </NavLink>
-        {logged ? (
+        {islogged ? (
           ""
         ) : (
           <NavLink to="/login" onClick={handleLogin}>
             LOGIN
           </NavLink>
         )}
-        {logged ? (
+        {islogged ? (
           <NavLink to="/logout" onClick={handleLogOut}>
             LOGOUT
           </NavLink>

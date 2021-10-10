@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
-// import { useSelector, useDispatch } from "react-redux";
-// import { loggingin } from "../Actions/index";
+import { useDispatch } from "react-redux";
+import { loggingin } from "../actions/index";
 import LogInForm from "./Login";
 import styled from "styled-components";
 import schema from "../validations/loginSchema";
@@ -21,8 +21,7 @@ const initialFormErrors = {
 const initialDisabled = true;
 
 export default function LogIn() {
-  // const isLoggedIn = useSelector((state) => state);
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
   // const [logIn, setLogIn] = useState(initialLogIn)
   const [formValues, setFormValues] = useState(initialFormValues);
   const [formErrors, setFormErrors] = useState(initialFormErrors);
@@ -62,8 +61,9 @@ export default function LogIn() {
         localStorage.setItem("token", resp.data.token);
         localStorage.setItem("message", resp.data.message);
         localStorage.setItem("username", resp.data.username);
+        dispatch(loggingin());
         push("/listing");
-        window.location.reload(true)
+        // window.location.reload(true);
       })
       .catch((err) => {
         console.log(err);
