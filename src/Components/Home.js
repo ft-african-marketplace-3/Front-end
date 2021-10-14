@@ -6,6 +6,11 @@ import glsl from "babel-plugin-glsl/macro";
 import styled from "styled-components";
 import {  Link } from "react-router-dom";
 
+const media ={
+  desktop: '@media (min-width: 600px)',
+  }
+
+
 const WaveShaderMaterial = shaderMaterial(
   // Uniform
   {
@@ -82,11 +87,11 @@ export default function Home() {
           <Link to="/mission">MISSION</Link>
           {/* <a href="/login">MISSION</a> */}
 
-          <img
+          {/* <img
             className="front"
             src="https://images.unsplash.com/photo-1576181456177-2b99ac0aa1ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjgxNDQxfQ&utm_source=api_app&utm_medium=referral&utm_campaign=api-credit"
             alt="marketplace"
-          />
+          /> */}
           <Scene className={"image"} />
         </div>
         <div className={"info"}>
@@ -187,6 +192,19 @@ const StyledHome = styled.div`
     align-items: center;
     align-content: center;
   }
+
+  ${media.desktop}{
+    .front{
+      width:75%;
+      
+    }
+    .animation {
+      width: 75%;
+    }
+    .serviceContainer {
+      height: 20vh;
+    }
+    }
   @media only screen and (max-width: 1000px) {
     .front{
       width:75%;

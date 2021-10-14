@@ -3,6 +3,9 @@ import axios from "axios";
 export const SIGN_IN = "SIGN_IN";
 export const SIGN_OUT = "SIGN_OUT";
 
+export const ACTIVE = "ACTIVE";
+export const INACTIVE = "INACTIVE";
+
 export const FETCH_START = "FETCH_START";
 export const FETCH_SUCCESS = "FETCH_SUCCESS";
 export const FETCH_FAIL = "FETCH_FAIL";
@@ -44,4 +47,12 @@ export const loggingIn = () => {
 };
 export const loggingOut = () => {
   return { type: SIGN_OUT };
+};
+
+////////////////////////////action for home button///////////
+export const homeActive = () => {
+  return { type: ACTIVE };
+};
+export const homeInactive = () => {
+  return { type: INACTIVE };
 };

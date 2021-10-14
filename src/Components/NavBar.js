@@ -162,7 +162,7 @@ const StyledNav = styled.div`
       text-decoration: none;
       font-weight: bolder;
       color: black;
-      margin: 0 20px;
+      margin: 0 5px;
       padding: 5px 10px;
     }
     a:hover {
