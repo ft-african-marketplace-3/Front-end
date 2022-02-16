@@ -1,20 +1,19 @@
-import React from "react"
-import styled from "styled-components"
-import { Route, Switch } from "react-router-dom"
-import PrivateRoute from "./Components/PrivateRoute/PrivateRoute"
+import React from "react";
+import styled from "styled-components";
+import { Route, Switch } from "react-router-dom";
+import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
 
-import Contact from "./Components/Contact"
-import NavBar from "./Components/NavBar"
-import Home from "./Components/Home"
-import SignUp from "./Components/SignUp/SignUpContainer"
-import LogIn from "./Components/LoginPage/LoginContainer.js"
-import ItemPage from "./Components/newItems/ItemPage"
-import NewListing from "./Components/newListings/newListingContainer"
-import Mission from "./Components/Mssion"
-import About from "./Components/About"
+import Contact from "./Components/Contact";
+import NavBar from "./Components/NavBar";
+import Home from "./Components/Home";
+import SignUp from "./Components/SignUp/SignUpContainer";
+import LogIn from "./Components/LoginPage/LoginContainer.js";
+import ItemPage from "./Components/newItems/ItemPage";
+import NewListing from "./Components/newListings/newListingContainer";
+import Mission from "./Components/Mssion";
+import About from "./Components/About";
 
 export default function App() {
-
   let isLoggedIn = localStorage.getItem("token");
 
   return (
@@ -32,7 +31,7 @@ export default function App() {
         <Route path={"/"} component={Home} />
       </Switch>
     </StyledApp>
-  )
+  );
 }
 
 const StyledApp = styled.div`
@@ -41,4 +40,4 @@ const StyledApp = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-`
+`;
